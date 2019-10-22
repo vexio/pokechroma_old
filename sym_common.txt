@@ -1,0 +1,73 @@
+	.space 0x8
+	.include "main.o"
+	.include "bg.o"
+	.include "window.o"
+	.include "text.o"
+	.include "sprite.o"
+	.include "link.o"
+	.include "link_rfu.o"
+	.include "rtc.o"
+	.include "battle_main.o"
+	.include "random.o"
+	.include "load_save.o"
+	.include "berry_blender.o"
+	.include "overworld.o"
+	.include "fieldmap.o"
+	.include "field_camera.o"
+	.include "field_control_avatar.o"
+	.include "start_menu.o"
+	.include "sound.o"
+	.include "task.o"
+	.include "trainer_see.o"
+	.include "pokedex.o"
+	.include "contest.o"
+	.include "tv.o"
+	.include "mauville_old_man.o"
+	.include "contest_painting_effects.o"
+	
+	.space 0x4
+	
+	.include "contest_painting.o"
+	.include "field_specials.o"
+	.include "evolution_scene.o"
+	.include "pokedex_cry_screen.o"
+	.include "save.o"
+	.include "battle_tower.o"
+	.include "intro.o"
+	.include "battle_anim_special.o"
+	.include "battle_factory_screen.o"
+	.include "apprentice.o"
+	
+	.space 0x8
+	
+	.include "list_menu.o"
+	.include "party_menu.o"
+	
+	.space 0x44
+
+gUnknown_03006370: @ 3006370
+	.space 0x10
+
+	.include "m4a.o"
+	.include "agb_flash.o"
+
+gRfuState: @ 3007868
+	.space 0x8
+
+gUnknown_03007870: @ 3007870
+	.space 0x10
+
+gUnknown_03007880: @ 3007880
+	.space 0x10
+
+gUnknown_03007890: @ 3007890
+	.space 0x4
+
+gUnknown_03007894: @ 3007894
+	.space 0x4
+
+gUnknown_03007898: @ 3007898
+	.space 0x8
+
+gUnknown_030078A0: @ 30078A0
+	.space 0xC
