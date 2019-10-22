@@ -69,8 +69,10 @@ fail:
 	FATAL_ERROR("Fatal error while decompressing LZ file.\n");
 }
 
-unsigned char *LZCompress(unsigned char *src, int srcSize, int *compressedSize, const int minDistance)
+unsigned char *LZCompress(unsigned char *src, int srcSize, int *compressedSize)
 {
+	const int minDistance = 2; // for compatibility with LZ77UnCompVram()
+
 	if (srcSize <= 0)
 		goto fail;
 

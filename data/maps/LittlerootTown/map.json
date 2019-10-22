@@ -30,7 +30,7 @@
         },
         {
             "elevation": 0,
-            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY..",
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
             "script": "CanvasTown_Sign_Directions_0",
             "type": "sign",
             "x": 18,

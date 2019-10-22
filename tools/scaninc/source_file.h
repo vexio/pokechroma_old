@@ -50,7 +50,6 @@ public:
     const std::set<std::string>& GetIncbins();
     const std::set<std::string>& GetIncludes();
     std::string& GetSrcDir();
-    SourceFileType FileType();
 
 private:
     union InnerUnion {

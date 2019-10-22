@@ -5,7 +5,7 @@
 #include <map>
 
 #include <string>
-using std::string; using std::to_string;
+using std::string;
 
 #include <inja.hpp>
 using namespace inja;
@@ -36,26 +36,12 @@ int main(int argc, char *argv[])
 
     // Add custom command callbacks.
     env.add_callback("doNotModifyHeader", 0, [jsonfilepath, templateFilepath](Arguments& args) {
-        return "//\n// DO NOT MODIFY THIS FILE! It is auto-generated from " + jsonfilepath +" and Inja template " + templateFilepath + "\n//\n";
-    });
-
-    env.add_callback("subtract", 2, [](Arguments& args) {
-        int minuend = args.at(0)->get<int>();
-        int subtrahend = args.at(1)->get<int>();
-
-        return minuend - subtrahend;
+        return "//\n// DO NOT MODIFY THIS FILE! IT IS AUTO-GENERATED FROM " + jsonfilepath +" and Inja template " + templateFilepath + "\n//\n";
     });
 
     env.add_callback("setVar", 2, [=](Arguments& args) {
         string key = args.at(0)->get<string>();
         string value = args.at(1)->get<string>();
-        set_custom_var(key, value);
-        return "";
-    });
-
-    env.add_callback("setVarInt", 2, [=](Arguments& args) {
-        string key = args.at(0)->get<string>();
-        string value = to_string(args.at(1)->get<int>());
         set_custom_var(key, value);
         return "";
     });
@@ -81,6 +67,7 @@ int main(int argc, char *argv[])
         return rawValue.erase(0, prefix.length());
     });
 
+    // Add custom command callbacks.
     env.add_callback("removeSuffix", 2, [](Arguments& args) {
         string rawValue = args.at(0)->get<string>();
         string suffix = args.at(1)->get<string>();
@@ -89,11 +76,6 @@ int main(int argc, char *argv[])
             return rawValue;
 
         return rawValue.substr(0, i);
-    });
-
-    // single argument is a json object
-    env.add_callback("isEmpty", 1, [](Arguments& args) {
-        return args.at(0)->empty();
     });
 
     try
