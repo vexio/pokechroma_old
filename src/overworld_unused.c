@@ -26,7 +26,7 @@
 #include "link_rfu.h"
 #include "load_save.h"
 #include "main.h"
-#include "alloc.h"
+#include "malloc.h"
 #include "m4a.h"
 #include "map_name_popup.h"
 #include "match_call.h"
@@ -85,9 +85,9 @@
 extern const u8 EventScript_WhiteOut[];
 extern const u8 EventScript_ResetMrBriney[];
 extern const u8 EventScript_DoLinkRoomExit[];
-extern const u8 gEventScript_TradeRoom_TooBusyToNotice[];
-extern const u8 gEventScript_TradeRoom_ReadTrainerCard_NoColor[];
-extern const u8 gEventScript_TradeRoom_ReadTrainerCard_Normal[];
+extern const u8 CableClub_EventScript_TooBusyToNotice[];
+extern const u8 CableClub_EventScript_ReadTrainerCard[];
+extern const u8 CableClub_EventScript_ReadTrainerCardColored[];
 extern const u8 EventScript_DoubleBattleColosseum_PlayerSpot0[];
 extern const u8 EventScript_DoubleBattleColosseum_PlayerSpot1[];
 extern const u8 EventScript_DoubleBattleColosseum_PlayerSpot2[];
@@ -186,15 +186,15 @@ static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStr
 static u16 GetCenterScreenMetatileBehavior(void);
 
 // IWRAM bss vars
-IWRAM_DATA static void *sUnusedOverworldCallback;
-IWRAM_DATA static u8 sPlayerTradingStates[4];
+static void *sUnusedOverworldCallback;
+static u8 sPlayerTradingStates[4];
 // This callback is called with a player's key code. It then returns an
 // adjusted key code, effectively intercepting the input before anything
 // can process it.
-IWRAM_DATA static u16 (*sPlayerKeyInterceptCallback)(u32);
-IWRAM_DATA static bool8 sUnknown_03000E18;
-IWRAM_DATA static u8 sRfuKeepAliveTimer;
-IWRAM_DATA static u32 sUnusedVar;
+static u16 (*sPlayerKeyInterceptCallback)(u32);
+static bool8 sUnknown_03000E18;
+static u8 sRfuKeepAliveTimer;
+static u32 sUnusedVar;
 
 // IWRAM common
 u16 *gBGTilemapBuffers1;
@@ -1054,7 +1054,7 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
         case MAP_NUM(ROUTE128):
             return TRUE;
         default:
-            if (VarGet(VAR_RAYQUAZA_STATE) < 4)
+            if (VarGet(VAR_SOOTOPOLIS_CITY_STATE) < 4)
                 return FALSE;
             switch (warp->mapNum)
             {
@@ -1094,9 +1094,9 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 
 static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
 {
-    if (VarGet(VAR_MOSSDEEP_STATE) == 0)
+    if (VarGet(VAR_MOSSDEEP_CITY_STATE) == 0)
         return FALSE;
-    else if (VarGet(VAR_MOSSDEEP_STATE) > 2)
+    else if (VarGet(VAR_MOSSDEEP_CITY_STATE) > 2)
         return FALSE;
     else if (warp->mapGroup != MAP_GROUP(MOSSDEEP_CITY_SPACE_CENTER_1F))
         return FALSE;
@@ -1192,7 +1192,7 @@ void Overworld_ClearSavedMusic(void)
 
 static void sub_8085810(void)
 {
-    if (FlagGet(FLAG_SPECIAL_FLAG_0x4001) != TRUE)
+    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
@@ -1240,7 +1240,7 @@ void TryFadeOutOldMapMusic(void)
 {
     u16 currentMusic = GetCurrentMapMusic();
     u16 warpMusic = GetWarpDestinationMusic();
-    if (FlagGet(FLAG_SPECIAL_FLAG_0x4001) != TRUE && warpMusic != GetCurrentMapMusic())
+    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
         if (currentMusic == MUS_NAMINORI && VarGet(VAR_SKY_PILLAR_STATE) == 2 && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SOOTOPOLIS_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SOOTOPOLIS_CITY) && sWarpDestination.mapGroup == MAP_GROUP(SOOTOPOLIS_CITY) && sWarpDestination.mapNum == MAP_NUM(SOOTOPOLIS_CITY) && sWarpDestination.x == 29 && sWarpDestination.y == 53)
             return;
@@ -1533,7 +1533,7 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext1_Init();
     ScriptContext2_Disable();
-    // gFieldCallback = ExecuteTruckSequence;
+    gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
     do_load_map_stuff_loop(&gMain.state);
     SetFieldVBlankCallback();
@@ -1749,7 +1749,7 @@ void CB2_ContinueSavedGame(void)
 
 static void FieldClearVBlankHBlankCallbacks(void)
 {
-    if (warp0_in_pokecenter() == TRUE)
+    if (UsedPokemonCenterWarp() == TRUE)
         CloseLink();
 
     if (gWirelessCommType != 0)
@@ -2130,11 +2130,10 @@ static void sub_8086988(u32 a1)
     ResetAllPicSprites();
     ResetCameraUpdateInfo();
     InstallCameraPanAheadCallback();
-    FreeAllSpritePalettes();
-    //if (!a1)
-    //    InitEventObjectPalettes(0);
-    //else
-    //    InitEventObjectPalettes(1);
+    if (!a1)
+        InitEventObjectPalettes(0);
+    else
+        InitEventObjectPalettes(1);
 
     FieldEffectActiveListClear();
     StartWeather();
@@ -2424,7 +2423,7 @@ static void UpdateAllLinkPlayers(u16 *keys, s32 selfId)
     struct TradeRoomPlayer trainer;
     s32 i;
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < MAX_LINK_PLAYERS; i++)
     {
         u8 key = keys[i];
         u16 setFacing = FACING_NONE;
@@ -2727,7 +2726,7 @@ static bool32 PlayerIsAtSouthExit(struct TradeRoomPlayer *player)
         return FALSE;
     else if (!MetatileBehavior_IsSouthArrowWarp(player->field_C))
         return FALSE;
-    else if (player->facing != 1)
+    else if (player->facing != DIR_SOUTH)
         return FALSE;
     else
         return TRUE;
@@ -2750,13 +2749,13 @@ static const u8 *TryInteractWithPlayer(struct TradeRoomPlayer *player)
     if (linkPlayerId != 4)
     {
         if (!player->isLocalPlayer)
-            return gEventScript_TradeRoom_TooBusyToNotice;
+            return CableClub_EventScript_TooBusyToNotice;
         else if (sPlayerTradingStates[linkPlayerId] != PLAYER_TRADING_STATE_IDLE)
-            return gEventScript_TradeRoom_TooBusyToNotice;
+            return CableClub_EventScript_TooBusyToNotice;
         else if (!GetLinkTrainerCardColor(linkPlayerId))
-            return gEventScript_TradeRoom_ReadTrainerCard_NoColor;
+            return CableClub_EventScript_ReadTrainerCard;
         else
-            return gEventScript_TradeRoom_ReadTrainerCard_Normal;
+            return CableClub_EventScript_ReadTrainerCardColored;
     }
 
     return GetInteractedLinkPlayerScript(&otherPlayerPos, player->field_C, player->facing);
@@ -3011,7 +3010,7 @@ static s32 sub_80878E4(u8 linkPlayerId)
 static u8 GetLinkPlayerIdAt(s16 x, s16 y)
 {
     u8 i;
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < MAX_LINK_PLAYERS; i++)
     {
         if (gLinkPlayerEventObjects[i].active && (gLinkPlayerEventObjects[i].movementMode == 0 || gLinkPlayerEventObjects[i].movementMode == 2))
         {
