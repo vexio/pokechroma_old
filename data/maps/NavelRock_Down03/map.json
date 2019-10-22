@@ -1,0 +1,38 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": true,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_NAVEL_ROCK_DOWN03",
+    "layout": "LAYOUT_NAVEL_ROCK_LADDER_ROOM1",
+    "map_type": "MAP_TYPE_UNDERGROUND",
+    "music": "MUS_RG_NANADUNGEON",
+    "name": "NavelRock_Down03",
+    "object_events": [
+    ],
+    "region_map_section": "MAPSEC_NAVEL_ROCK2",
+    "requires_flash": false,
+    "show_map_name": true,
+    "warp_events": [
+        {
+            "dest_map": "MAP_NAVEL_ROCK_DOWN02",
+            "dest_warp_id": 1,
+            "elevation": 3,
+            "x": 3,
+            "y": 3
+        },
+        {
+            "dest_map": "MAP_NAVEL_ROCK_DOWN04",
+            "dest_warp_id": 0,
+            "elevation": 3,
+            "x": 5,
+            "y": 5
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

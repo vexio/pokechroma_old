@@ -1,0 +1,44 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": true,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_NAVEL_ROCK_BOTTOM",
+    "layout": "LAYOUT_NAVEL_ROCK_BOTTOM",
+    "map_type": "MAP_TYPE_UNDERGROUND",
+    "music": "MUS_RG_NANADUNGEON",
+    "name": "NavelRock_Bottom",
+    "object_events": [
+        {
+            "elevation": 0,
+            "flag": "FLAG_HIDE_LUGIA",
+            "graphics_id": "EVENT_OBJ_GFX_LUGIA",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "NavelRock_Bottom_EventScript_2692A2",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 11,
+            "y": 13
+        }
+    ],
+    "region_map_section": "MAPSEC_NAVEL_ROCK2",
+    "requires_flash": false,
+    "show_map_name": true,
+    "warp_events": [
+        {
+            "dest_map": "MAP_NAVEL_ROCK_DOWN11",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 14,
+            "y": 19
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

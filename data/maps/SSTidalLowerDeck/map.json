@@ -1,0 +1,65 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "flag": "FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS",
+            "item": "ITEM_LEFTOVERS",
+            "type": "hidden_item",
+            "x": 0,
+            "y": 2
+        }
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_SS_TIDAL_LOWER_DECK",
+    "layout": "LAYOUT_SS_TIDAL_LOWER_DECK",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_M_BOAT",
+    "name": "SSTidalLowerDeck",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SAILOR",
+            "movement_range_x": 4,
+            "movement_range_y": 4,
+            "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+            "script": "SSTidalLowerDeck_EventScript_23C819",
+            "trainer_sight_or_berry_tree_id": "3",
+            "trainer_type": "1",
+            "x": 10,
+            "y": 4
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SAILOR",
+            "movement_range_x": 7,
+            "movement_range_y": 4,
+            "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+            "script": "SSTidalLowerDeck_EventScript_23C830",
+            "trainer_sight_or_berry_tree_id": "3",
+            "trainer_type": "1",
+            "x": 7,
+            "y": 4
+        }
+    ],
+    "region_map_section": "MAPSEC_DYNAMIC",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_SS_TIDAL_CORRIDOR",
+            "dest_warp_id": 8,
+            "elevation": 3,
+            "x": 15,
+            "y": 2
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

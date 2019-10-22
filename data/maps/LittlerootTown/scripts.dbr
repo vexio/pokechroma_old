@@ -1,0 +1,45 @@
+script CanvasTown_Sign_Directions_0
+  using_msgbox MSGBOX_SIGN
+    say "Canvas Trail Ahead$"
+
+script CanvasTown_Trigger_RivalEncounter
+  lockall
+    if VAR_UNUSED_0x404E is 0
+      say "???:{COLOR BLUE} Whoa whoa {PLAYER}!\n"
+      say "Not so fast!$"
+      closemessage
+      move_and_wait 3
+        walk_down
+        walk_down
+        walk_down
+        walk_down
+        walk_down
+      say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Where do you think\n"
+      say "you're going?\p"
+      say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} ...$"
+      closemessage
+      move_and_wait 3
+        emote_exclamation_mark
+      delay 120
+      say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} What?\p"
+      say "You're getting your first Pokémon\n"
+      say "from Professor Cypress too?\p"
+      say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Well...\n"
+      say "I already got mine! Yeah!\l"
+      say "And I'm not gonna tell you which\l"
+      say "one I chose because you could counter me!\p"
+      say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} No way!\p"
+      say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Well, I'm gonna get ahead\n"
+      say "while I still can!\p"
+      say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} I'm gonna be the best trainer\n"
+      say "the Ryoko Region has ever seen!$"
+      closemessage
+      move_and_wait 3
+        walk_up
+        walk_up
+        walk_up
+        walk_up
+        walk_up
+      setflag FLAG_UNUSED_0x493
+      setvar VAR_UNUSED_0x404E, 1
+    

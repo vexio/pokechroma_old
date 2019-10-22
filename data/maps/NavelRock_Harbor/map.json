@@ -1,0 +1,57 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_NAVEL_ROCK_HARBOR",
+    "layout": "LAYOUT_ISLAND_HARBOR",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_RG_NANASHIMA",
+    "name": "NavelRock_Harbor",
+    "object_events": [
+        {
+            "elevation": 0,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SAILOR",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_UP",
+            "script": "NavelRock_Harbor_EventScript_2690BD",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 8,
+            "y": 5
+        },
+        {
+            "elevation": 1,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SS_TIDAL",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "0x0",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 8,
+            "y": 7
+        }
+    ],
+    "region_map_section": "MAPSEC_NAVEL_ROCK2",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_NAVEL_ROCK_EXTERIOR",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 8,
+            "y": 2
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}
