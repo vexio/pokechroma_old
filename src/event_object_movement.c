@@ -1528,7 +1528,7 @@ static u8 TrySetupEventObjectSprite(struct EventObjectTemplate *eventObjectTempl
     graphicsInfo = GetEventObjectGraphicsInfo(eventObject->graphicsId);
     if (spriteTemplate->paletteTag != 0xffff)
     {
-        sub_8086988(spriteTemplate->paletteTag);
+        LoadEventObjectPalette(spriteTemplate->paletteTag);
     }
     //paletteSlot = graphicsInfo->paletteSlot;
     //if (paletteSlot == 0)
@@ -1858,7 +1858,7 @@ static void sub_808E1B8(u8 eventObjectId, s16 x, s16 y)
     spriteTemplate.images = &spriteFrameImage;
     if (spriteTemplate.paletteTag != 0xffff)
     {
-        sub_8086988(spriteTemplate.paletteTag);
+        LoadEventObjectPalette(spriteTemplate.paletteTag);
     }
     //*(u16 *)&spriteTemplate.paletteTag = 0xFFFF;
     //paletteSlot = graphicsInfo->paletteSlot;
