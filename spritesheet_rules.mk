@@ -664,3 +664,6 @@ $(EVENTOBJGFXDIR)/effects/unused_grass.4bpp: %.4bpp: %.png
 
 $(EVENTOBJGFXDIR)/newpeople/fat_man_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(EVENTOBJGFXDIR)/newpeople/girl_1.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

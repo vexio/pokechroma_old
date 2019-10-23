@@ -431,6 +431,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define EVENT_OBJ_PAL_TAG_33 0x1122
 #define EVENT_OBJ_PAL_TAG_34 0x1123
 #define EVENT_OBJ_PAL_FAT_MAN_2 0x1124
+#define EVENT_OBJ_PAL_GIRL_1 0x1125
 #define EVENT_OBJ_PAL_TAG_NONE 0x11FF
 
 #include "data/field_event_obj/event_object_graphics_info_pointers.h"
@@ -442,16 +443,16 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #include "data/field_event_obj/event_object_graphics_info.h"
 
 const struct SpritePalette sEventObjectSpritePalettes[] = {
-    {gEventObjectPalette0,  EVENT_OBJ_PAL_TAG_0},
-    {gEventObjectPalette1,  EVENT_OBJ_PAL_TAG_1},
-    {gEventObjectPalette2,  EVENT_OBJ_PAL_TAG_2},
-    {gEventObjectPalette3,  EVENT_OBJ_PAL_TAG_3},
-    {gEventObjectPalette4,  EVENT_OBJ_PAL_TAG_4},
-    {gEventObjectPalette5,  EVENT_OBJ_PAL_TAG_5},
-    {gEventObjectPalette6,  EVENT_OBJ_PAL_TAG_6},
-    {gEventObjectPalette7,  EVENT_OBJ_PAL_TAG_7},
-    {gEventObjectPalette8,  EVENT_OBJ_PAL_TAG_8},
-    {gEventObjectPalette9,  EVENT_OBJ_PAL_TAG_9},
+    {gEventObjectPalette0, EVENT_OBJ_PAL_TAG_0},
+    {gEventObjectPalette1, EVENT_OBJ_PAL_TAG_1},
+    {gEventObjectPalette2, EVENT_OBJ_PAL_TAG_2},
+    {gEventObjectPalette3, EVENT_OBJ_PAL_TAG_3},
+    {gEventObjectPalette4, EVENT_OBJ_PAL_TAG_4},
+    {gEventObjectPalette5, EVENT_OBJ_PAL_TAG_5},
+    {gEventObjectPalette6, EVENT_OBJ_PAL_TAG_6},
+    {gEventObjectPalette7, EVENT_OBJ_PAL_TAG_7},
+    {gEventObjectPalette8, EVENT_OBJ_PAL_TAG_8},
+    {gEventObjectPalette9, EVENT_OBJ_PAL_TAG_9},
     {gEventObjectPalette10, EVENT_OBJ_PAL_TAG_10},
     {gEventObjectPalette11, EVENT_OBJ_PAL_TAG_11},
     {gEventObjectPalette12, EVENT_OBJ_PAL_TAG_12},
@@ -478,7 +479,8 @@ const struct SpritePalette sEventObjectSpritePalettes[] = {
     {gEventObjectPalette33, EVENT_OBJ_PAL_TAG_33},
     {gEventObjectPalette34, EVENT_OBJ_PAL_TAG_34},
     {gEventObjectPalette_Fat_Man_2, EVENT_OBJ_PAL_FAT_MAN_2},
-    {NULL,                  0x0000},
+    {gEventObjectPalette_Girl_1, EVENT_OBJ_PAL_GIRL_1},
+    {NULL, 0x0000},
 };
 
 const u16 gPlayerReflectionPaletteTags[] = {
