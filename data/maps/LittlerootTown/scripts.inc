@@ -1078,12 +1078,12 @@ CanvasTown_Sign_Directions_0::
   end
 
 _CanvasTown_Sign_Directions_0_Subscript_Text_0:
-  .string "Canvas Trail Ahead$"
+  .string "{UP_ARROW} {COLOR GREEN}Canvas Trail$"
 
 CanvasTown_Trigger_RivalEncounter::
   lockall
   compare VAR_UNUSED_0x404E, 0
-  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6
+  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_7
   
   releaseall
   end
@@ -1147,5 +1147,29 @@ _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6::
   waitmovement 3
   setflag FLAG_UNUSED_0x493
   setvar VAR_UNUSED_0x404E, 1
+  releaseall
+  end
+
+_CanvasTown_Trigger_RivalEncounter_Subscript_Movement_6:
+  set_invisible
+  step_end
+
+_CanvasTown_Trigger_RivalEncounter_Subscript_Code_7::
+  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_0, MSGBOX_DEFAULT
+  closemessage
+  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_1
+  waitmovement 3
+  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_2, MSGBOX_DEFAULT
+  closemessage
+  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_3
+  waitmovement 3
+  delay 20
+  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_4, MSGBOX_DEFAULT
+  closemessage
+  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_5
+  waitmovement 3
+  setflag FLAG_UNUSED_0x493
+  setvar VAR_UNUSED_0x404E, 1
+  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_6
   releaseall
   end

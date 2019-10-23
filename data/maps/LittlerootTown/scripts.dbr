@@ -1,6 +1,6 @@
 script CanvasTown_Sign_Directions_0
   using_msgbox MSGBOX_SIGN
-    say "Canvas Trail Ahead$"
+    say "{UP_ARROW} {COLOR GREEN}Canvas Trail$"
 
 script CanvasTown_Trigger_RivalEncounter
   lockall
@@ -20,7 +20,7 @@ script CanvasTown_Trigger_RivalEncounter
       closemessage
       move_and_wait 3
         emote_exclamation_mark
-      delay 120
+      delay 20
       say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} What?\p"
       say "You're getting your first Pokémon\n"
       say "from Professor Cypress too?\p"
@@ -42,4 +42,6 @@ script CanvasTown_Trigger_RivalEncounter
         walk_up
       setflag FLAG_UNUSED_0x493
       setvar VAR_UNUSED_0x404E, 1
+      move 3
+        set_invisible
     
