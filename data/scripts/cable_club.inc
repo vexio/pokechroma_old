@@ -1390,23 +1390,23 @@ EventScript_277BB4:: @ 8277BB4
 	end
 
 OldaleTown_PokemonCenter_2F_EventScript_277BBE:: @ 8277BBE
-	setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
-	setmetatile 5, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
+	//setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
+	//setmetatile 5, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
 	return
 
 OldaleTown_PokemonCenter_2F_EventScript_277BD1:: @ 8277BD1
-	setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop, 1
-	setmetatile 5, 3, METATILE_PokemonCenter_CounterBarrier, 1
+	//setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop, 1
+	//setmetatile 5, 3, METATILE_PokemonCenter_CounterBarrier, 1
 	return
 
 OldaleTown_PokemonCenter_2F_EventScript_277BE4:: @ 8277BE4
-	setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
-	setmetatile 9, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
+	//setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
+	//setmetatile 9, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
 	return
 
 OldaleTown_PokemonCenter_2F_EventScript_277BF7:: @ 8277BF7
-	setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop, 1
-	setmetatile 9, 3, METATILE_PokemonCenter_CounterBarrier, 1
+	//setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop, 1
+	//setmetatile 9, 3, METATILE_PokemonCenter_CounterBarrier, 1
 	return
 
 MossdeepCity_GameCorner_1F_EventScript_277C0A:: @ 8277C0A

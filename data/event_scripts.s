@@ -3017,23 +3017,23 @@ UnusualWeather_EventScript_PlaceTilesRoute115East:: @ 827394C
 	return
 
 UnusualWeather_EventScript_PlaceTilesRoute116North:: @ 827395F
-	setmetatile 59, 12, METATILE_General_CaveEntrance_Top, 1
-	setmetatile 59, 13, METATILE_General_CaveEntrance_Bottom, 0
+	//setmetatile 59, 12, METATILE_General_CaveEntrance_Top, 1
+	//setmetatile 59, 13, METATILE_General_CaveEntrance_Bottom, 0
 	return
 
 UnusualWeather_EventScript_PlaceTilesRoute116South:: @ 8273972
-	setmetatile 79, 5, METATILE_General_CaveEntrance_Top, 1
-	setmetatile 79, 6, METATILE_General_CaveEntrance_Bottom, 0
+	//setmetatile 79, 5, METATILE_General_CaveEntrance_Top, 1
+	//setmetatile 79, 6, METATILE_General_CaveEntrance_Bottom, 0
 	return
 
 UnusualWeather_EventScript_PlaceTilesRoute118East:: @ 8273985
-	setmetatile 42, 5, METATILE_General_CaveEntrance_Top, 1
-	setmetatile 42, 6, METATILE_General_CaveEntrance_Bottom, 0
+	//setmetatile 42, 5, METATILE_General_CaveEntrance_Top, 1
+	//setmetatile 42, 6, METATILE_General_CaveEntrance_Bottom, 0
 	return
 
 UnusualWeather_EventScript_PlaceTilesRoute118West:: @ 8273998
-	setmetatile 9, 5, METATILE_General_CaveEntrance_Top, 1
-	setmetatile 9, 6, METATILE_General_CaveEntrance_Bottom, 0
+	//setmetatile 9, 5, METATILE_General_CaveEntrance_Top, 1
+	//setmetatile 9, 6, METATILE_General_CaveEntrance_Bottom, 0
 	return
 
 UnusualWeather_EventScript_PlaceTilesRoute105North:: @ 82739AB

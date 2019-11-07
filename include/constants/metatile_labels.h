@@ -161,11 +161,11 @@
 #define METATILE_General_Grass_TreeLeft       0x1CE
 #define METATILE_General_Grass_TreeRight      0x1CF
 #define METATILE_General_Grass_TreeUp         0x00E
-#define METATILE_General_LongGrass            0x015
+#define METATILE_General_LongGrass            0x00C
 #define METATILE_General_MuddySlope_Frame0    0x0E8
 #define METATILE_General_MuddySlope_Frame1    0x0E9
 #define METATILE_General_MuddySlope_Frame2    0x0EA
-#define METATILE_General_MuddySlope_Frame3    0x0EB
+#define METATILE_General_MuddySlope_Frame3    0x094
 #define METATILE_General_ReflectiveWater      0x0A1
 #define METATILE_General_RockWall_GrassBase   0x079
 #define METATILE_General_RockWall_RockBase    0x07C
@@ -173,7 +173,8 @@
 #define METATILE_General_RoughDeepWater       0x14F
 #define METATILE_General_RoughWater           0x14E
 #define METATILE_General_SandPit_Center       0x121
-#define METATILE_General_TallGrass            0x00D
+#define METATILE_General_StubbyGrass          0x031
+#define METATILE_General_TallGrass            0x004
 #define METATILE_General_TallGrass_TreeLeft   0x1C6
 #define METATILE_General_TallGrass_TreeRight  0x1C7
 #define METATILE_General_TallGrass_TreeUp     0x025
@@ -320,33 +321,6 @@
 #define METATILE_PetalburgGym_SlidingDoor_Frame2  0x21A
 #define METATILE_PetalburgGym_SlidingDoor_Frame3  0x21B
 #define METATILE_PetalburgGym_SlidingDoor_Frame4  0x21C
-
-// gTileset_PokemonCenter
-#define METATILE_PokemonCenter_CounterBarrier           0x25D
-#define METATILE_PokemonCenter_Elevator1F_Tile0_Frame0  0x280
-#define METATILE_PokemonCenter_Elevator1F_Tile0_Frame1  0x282
-#define METATILE_PokemonCenter_Elevator1F_Tile0_Frame2  0x284
-#define METATILE_PokemonCenter_Elevator1F_Tile1_Frame0  0x281
-#define METATILE_PokemonCenter_Elevator1F_Tile1_Frame1  0x283
-#define METATILE_PokemonCenter_Elevator1F_Tile1_Frame2  0x285
-#define METATILE_PokemonCenter_Elevator1F_Tile2_Frame0  0x288
-#define METATILE_PokemonCenter_Elevator1F_Tile2_Frame1  0x28A
-#define METATILE_PokemonCenter_Elevator1F_Tile2_Frame2  0x28C
-#define METATILE_PokemonCenter_Elevator1F_Tile3_Frame0  0x289
-#define METATILE_PokemonCenter_Elevator1F_Tile3_Frame1  0x28B
-#define METATILE_PokemonCenter_Elevator1F_Tile3_Frame2  0x28D
-#define METATILE_PokemonCenter_Elevator2F_Tile0_Frame0  0x2A0
-#define METATILE_PokemonCenter_Elevator2F_Tile0_Frame1  0x2A2
-#define METATILE_PokemonCenter_Elevator2F_Tile0_Frame2  0x2A4
-#define METATILE_PokemonCenter_Elevator2F_Tile1_Frame0  0x2A1
-#define METATILE_PokemonCenter_Elevator2F_Tile1_Frame1  0x2A3
-#define METATILE_PokemonCenter_Elevator2F_Tile1_Frame2  0x2A5
-#define METATILE_PokemonCenter_Elevator2F_Tile2_Frame0  0x2A8
-#define METATILE_PokemonCenter_Elevator2F_Tile2_Frame1  0x2AA
-#define METATILE_PokemonCenter_Elevator2F_Tile2_Frame2  0x2AC
-#define METATILE_PokemonCenter_Floor_Plain_Alt          0x2E4
-#define METATILE_PokemonCenter_Floor_ShadowTop          0x21E
-#define METATILE_PokemonCenter_Floor_ShadowTop_Alt      0x2DC
 
 // gTileset_Shop
 #define METATILE_Shop_Laptop1_Flash   0x258

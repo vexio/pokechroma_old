@@ -55,6 +55,7 @@ RAMSCRGEN := tools/ramscrgen/ramscrgen$(EXE)
 FIX := tools/gbafix/gbafix$(EXE)
 MAPJSON := tools/mapjson/mapjson$(EXE)
 JSONPROC := tools/jsonproc/jsonproc$(EXE)
+SCRIPT := tools/poryscript/poryscript$(EXE)
 
 # Clear the default suffixes
 .SUFFIXES:
@@ -106,6 +107,7 @@ clean: tidy
 	rm -f $(DATA_ASM_SUBDIR)/maps/connections.inc $(DATA_ASM_SUBDIR)/maps/events.inc $(DATA_ASM_SUBDIR)/maps/groups.inc $(DATA_ASM_SUBDIR)/maps/headers.inc
 	find $(DATA_ASM_SUBDIR)/maps \( -iname 'connections.inc' -o -iname 'events.inc' -o -iname 'header.inc' \) -exec rm {} +
 	rm -f $(AUTO_GEN_TARGETS)
+	rm -f $(patsubst %.pory,%.inc,$(shell find data/ -type f -name '*.pory'))
 
 tidy:
 	rm -f $(ROM) $(ELF) $(MAP)
@@ -121,6 +123,7 @@ include songs.mk
 %.png: ;
 %.pal: ;
 %.aif: ;
+%.pory: ;
 
 %.1bpp: %.png  ; $(GFX) $< $@
 %.4bpp: %.png  ; $(GFX) $< $@
@@ -131,6 +134,7 @@ include songs.mk
 %.rl: % ; $(GFX) $< $@
 sound/direct_sound_samples/cry_%.bin: sound/direct_sound_samples/cry_%.aif ; $(AIF) $< $@ --compress
 sound/%.bin: sound/%.aif ; $(AIF) $< $@
+data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@
 
 
 $(C_BUILDDIR)/libc.o: CC1 := tools/agbcc/bin/old_agbcc

@@ -1042,7 +1042,7 @@ CanvasTown_Script_FatMan::
 CanvasTown_Text_FatMan:
 	.string "{COLOR BLUE}Have you heard about Professor\n"
 	.string "Cypress' fossil revival technology?\p"
-	.string "Technology is truly amazing.$"
+	.string "Technology is truly amazing!$"
 
 CanvasTown_Script_Woman::
 	msgbox CanvasTown_Text_Woman, MSGBOX_NPC
@@ -1083,7 +1083,25 @@ _CanvasTown_Sign_Directions_0_Subscript_Text_0:
 CanvasTown_Trigger_RivalEncounter::
   lockall
   compare VAR_UNUSED_0x404E, 0
-  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_7
+  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6
+  
+  releaseall
+  end
+
+CanvasTown_Trigger_RivalEncounter_Left::
+  lockall
+  setobjectxy 3, 15, 3
+  compare VAR_UNUSED_0x404E, 0
+  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6
+  
+  releaseall
+  end
+
+CanvasTown_Trigger_RivalEncounter_Right::
+  lockall
+  setobjectxy 3, 17, 3
+  compare VAR_UNUSED_0x404E, 0
+  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6
   
   releaseall
   end
@@ -1112,7 +1130,7 @@ _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_3:
 _CanvasTown_Trigger_RivalEncounter_Subscript_Text_4:
   .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} What?\p"
   .string "You're getting your first Pokémon\n"
-  .string "from Professor Cypress too?\p"
+  .string "from {COLOR GREEN}Professor Cypress{COLOR BLUE} too?\p"
   .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Well...\n"
   .string "I already got mine! Yeah!\l"
   .string "And I'm not gonna tell you which\l"
@@ -1140,16 +1158,17 @@ _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6::
   closemessage
   applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_3
   waitmovement 3
-  delay 120
+  delay 20
   msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_4, MSGBOX_DEFAULT
   closemessage
   applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_5
   waitmovement 3
+  clearflag FLAG_HIDE_MAP_NAME_POPUP
   setflag FLAG_UNUSED_0x493
   setvar VAR_UNUSED_0x404E, 1
+  removeobject 3
   releaseall
   end
-
 _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_6:
   set_invisible
   step_end
@@ -1169,6 +1188,7 @@ _CanvasTown_Trigger_RivalEncounter_Subscript_Code_7::
   applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_5
   waitmovement 3
   setflag FLAG_UNUSED_0x493
+  clearflag FLAG_HIDE_MAP_NAME_POPUP
   setvar VAR_UNUSED_0x404E, 1
   applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_6
   releaseall

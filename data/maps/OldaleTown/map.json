@@ -25,8 +25,8 @@
             "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
             "script": "Common_EventScript_ShowPokemartSign",
             "type": "sign",
-            "x": 38,
-            "y": 18
+            "x": 26,
+            "y": 9
         },
         {
             "elevation": 0,
@@ -41,8 +41,8 @@
             "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
             "script": "Common_EventScript_ShowPokemartSign",
             "type": "sign",
-            "x": 39,
-            "y": 18
+            "x": 27,
+            "y": 9
         }
     ],
     "connections": [
@@ -187,8 +187,8 @@
             "dest_map": "MAP_OLDALE_TOWN_MART",
             "dest_warp_id": 0,
             "elevation": 0,
-            "x": 37,
-            "y": 18
+            "x": 25,
+            "y": 9
         }
     ],
     "weather": "WEATHER_SUNNY"

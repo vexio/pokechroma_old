@@ -1,0 +1,20 @@
+script CanvasCreek_Object_Boy
+  lock
+  using_msgbox MSGBOX_NPC
+    say "{COLOR BLUE}I can't seem to find my\n"
+    say "Pokéball anywhere...\p"
+    say "No one is coming through\n"
+    say "until I find my Pokéball!$"
+  release
+
+script CanvasCreek_Trigger_Boy
+  lockall
+  if FLAG_UNUSED_0x494 is 0
+    move_and_wait 2
+      face_down
+      emote_exclamation_mark
+    msgbox _CanvasCreek_Object_Boy_Subscript_Text_0, MSGBOX_DEFAULT
+    closemessage
+    move_and_wait player
+      walk_right
+    releaseall

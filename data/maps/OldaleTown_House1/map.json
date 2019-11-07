@@ -36,14 +36,7 @@
             "dest_map": "MAP_OLDALE_TOWN",
             "dest_warp_id": 0,
             "elevation": 0,
-            "x": 3,
-            "y": 8
-        },
-        {
-            "dest_map": "MAP_OLDALE_TOWN",
-            "dest_warp_id": 0,
-            "elevation": 0,
-            "x": 4,
+            "x": 5,
             "y": 8
         }
     ],

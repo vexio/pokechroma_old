@@ -149,11 +149,6 @@
             "direction": "down",
             "map": "MAP_SLATEPORT_CITY",
             "offset": 0
-        },
-        {
-            "direction": "left",
-            "map": "MAP_ROUTE103",
-            "offset": 60
         }
     ],
     "coord_events": [

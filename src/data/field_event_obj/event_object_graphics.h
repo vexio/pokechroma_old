@@ -70,7 +70,7 @@ const u16 gEventObjectPalette6[] = INCBIN_U16("graphics/event_objects/palettes/f
 const u16 gEventObjectPalette7[] = INCBIN_U16("graphics/event_objects/palettes/field_object_palette_07.gbapal");
 const u32 gEventObjectPic_NinjaBoy[] = INCBIN_U32("graphics/event_objects/pics/people/ninja_boy.4bpp");
 const u32 gEventObjectPic_Twin[] = INCBIN_U32("graphics/event_objects/pics/people/twin.4bpp");
-const u32 gEventObjectPic_Boy1[] = INCBIN_U32("graphics/event_objects/pics/people/boy_1.4bpp");
+const u32 gEventObjectPic_Boy1[] = INCBIN_U32("graphics/event_objects/pics/newpeople/boy_1.4bpp");
 const u32 gEventObjectPic_Girl1[] = INCBIN_U32("graphics/event_objects/pics/newpeople/girl_1.4bpp");
 const u32 gEventObjectPic_Boy2[] = INCBIN_U32("graphics/event_objects/pics/people/boy_2.4bpp");
 const u32 gEventObjectPic_Girl2[] = INCBIN_U32("graphics/event_objects/pics/people/girl_2.4bpp");
@@ -363,3 +363,4 @@ const u16 gEventObjectPalette31[] = INCBIN_U16("graphics/event_objects/palettes/
 // new palettes
 const u16 gEventObjectPalette_Fat_Man_2[] = INCBIN_U16("graphics/event_objects/pics/newpeople/fat_man_2.gbapal");
 const u16 gEventObjectPalette_Girl_1[] = INCBIN_U16("graphics/event_objects/pics/newpeople/girl_1.gbapal");
+const u16 gEventObjectPalette_Boy_1[] = INCBIN_U16("graphics/event_objects/pics/newpeople/boy_1.gbapal");

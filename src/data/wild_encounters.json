@@ -4606,57 +4606,47 @@
                 {
                     "base_label": "gRoute101",
                     "land_mons": {
-                        "encounter_rate": 20,
+                        "encounter_rate": 15,
                         "mons": [
                             {
                                 "max_level": 2,
                                 "min_level": 2,
-                                "species": "SPECIES_WURMPLE"
-                            },
-                            {
-                                "max_level": 2,
-                                "min_level": 2,
-                                "species": "SPECIES_POOCHYENA"
-                            },
-                            {
-                                "max_level": 2,
-                                "min_level": 2,
-                                "species": "SPECIES_WURMPLE"
-                            },
-                            {
-                                "max_level": 3,
-                                "min_level": 3,
-                                "species": "SPECIES_WURMPLE"
-                            },
-                            {
-                                "max_level": 3,
-                                "min_level": 3,
-                                "species": "SPECIES_POOCHYENA"
-                            },
-                            {
-                                "max_level": 3,
-                                "min_level": 3,
-                                "species": "SPECIES_POOCHYENA"
-                            },
-                            {
-                                "max_level": 3,
-                                "min_level": 3,
-                                "species": "SPECIES_WURMPLE"
-                            },
-                            {
-                                "max_level": 3,
-                                "min_level": 3,
-                                "species": "SPECIES_POOCHYENA"
-                            },
-                            {
-                                "max_level": 2,
-                                "min_level": 2,
                                 "species": "SPECIES_ZIGZAGOON"
                             },
                             {
                                 "max_level": 2,
                                 "min_level": 2,
-                                "species": "SPECIES_ZIGZAGOON"
+                                "species": "SPECIES_POOCHYENA"
+                            },
+                            {
+                                "max_level": 3,
+                                "min_level": 2,
+                                "species": "SPECIES_PIDGEY"
+                            },
+                            {
+                                "max_level": 3,
+                                "min_level": 2,
+                                "species": "SPECIES_WURMPLE"
+                            },
+                            {
+                                "max_level": 3,
+                                "min_level": 2,
+                                "species": "SPECIES_CATERPIE"
+                            },
+                            {
+                                "max_level": 3,
+                                "min_level": 2,
+                                "species": "SPECIES_WEEDLE"
+                            },
+                            {
+                                "max_level": 3,
+                                "min_level": 3,
+                                "species": "SPECIES_WURMPLE"
+                            },
+                            {
+                                "max_level": 3,
+                                "min_level": 3,
+                                "species": "SPECIES_POOCHYENA"
                             },
                             {
                                 "max_level": 3,
@@ -4666,7 +4656,17 @@
                             {
                                 "max_level": 3,
                                 "min_level": 3,
-                                "species": "SPECIES_ZIGZAGOON"
+                                "species": "SPECIES_PIDGEY"
+                            },
+                            {
+                                "max_level": 4,
+                                "min_level": 4,
+                                "species": "SPECIES_ABSOL"
+                            },
+                            {
+                                "max_level": 4,
+                                "min_level": 4,
+                                "species": "SPECIES_PIKACHU"
                             }
                         ]
                     },

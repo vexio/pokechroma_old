@@ -12,7 +12,7 @@ Route101_MapScript2_1EBCCB: @ 81EBCCB
 	.2byte 0
 
 Route101_EventScript_1EBCD5:: @ 81EBCD5
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+@	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_ROUTE101_STATE, 1
 	end
 
@@ -299,3 +299,38 @@ Route101_Text_1EC0C8: @ 81EC0C8
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
 
+CanvasCreek_Trigger_Boy::
+  lockall
+  goto_if_set FLAG_UNUSED_0x494, _CanvasCreek_Trigger_Boy_Subscript_Code_2
+  end
+
+_CanvasCreek_Trigger_Boy_Subscript_Movement_0:
+  face_down
+  emote_exclamation_mark
+  step_end
+
+_CanvasCreek_Trigger_Boy_Subscript_Movement_1:
+  walk_right
+  step_end
+
+_CanvasCreek_Trigger_Boy_Subscript_Code_2::
+  applymovement 2, _CanvasCreek_Trigger_Boy_Subscript_Movement_0
+  waitmovement 2
+  msgbox _CanvasCreek_Object_Boy_Subscript_Text_0, MSGBOX_DEFAULT
+  closemessage
+  applymovement EVENT_OBJ_ID_PLAYER, _CanvasCreek_Trigger_Boy_Subscript_Movement_1
+  waitmovement EVENT_OBJ_ID_PLAYER
+  releaseall
+  end
+
+CanvasCreek_Object_Boy::
+  lock
+  msgbox _CanvasCreek_Object_Boy_Subscript_Text_0, MSGBOX_NPC
+  release
+  end
+
+_CanvasCreek_Object_Boy_Subscript_Text_0:
+  .string "{COLOR BLUE}I can't seem to find my\n"
+  .string "Pokéball anywhere...\p"
+  .string "No one is coming through\n"
+  .string "until I find my Pokéball!$"

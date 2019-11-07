@@ -162,9 +162,6 @@ $(EVENTOBJGFXDIR)/people/beauty.4bpp: %.4bpp: %.png
 $(EVENTOBJGFXDIR)/people/black_belt.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(EVENTOBJGFXDIR)/people/boy_1.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
-
 $(EVENTOBJGFXDIR)/people/boy_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -666,4 +663,7 @@ $(EVENTOBJGFXDIR)/newpeople/fat_man_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(EVENTOBJGFXDIR)/newpeople/girl_1.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(EVENTOBJGFXDIR)/newpeople/boy_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4

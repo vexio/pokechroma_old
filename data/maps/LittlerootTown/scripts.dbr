@@ -23,7 +23,7 @@ script CanvasTown_Trigger_RivalEncounter
       delay 20
       say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} What?\p"
       say "You're getting your first Pokémon\n"
-      say "from Professor Cypress too?\p"
+      say "from {COLOR GREEN}Professor Cypress{COLOR BLUE} too?\p"
       say "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Well...\n"
       say "I already got mine! Yeah!\l"
       say "And I'm not gonna tell you which\l"
@@ -40,8 +40,8 @@ script CanvasTown_Trigger_RivalEncounter
         walk_up
         walk_up
         walk_up
+      clearflag FLAG_HIDE_MAP_NAME_POPUP
       setflag FLAG_UNUSED_0x493
       setvar VAR_UNUSED_0x404E, 1
-      move 3
-        set_invisible
+      removeobject 3
     

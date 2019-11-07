@@ -572,3 +572,10 @@ gMetatiles_AlnerwickCity::
 	.align 1
 gMetatileAttributes_AlnerwickCity::
 	.incbin "data/tilesets/secondary/alnerwickcity/metatile_attributes.bin"
+	.align 1
+gMetatiles_Lab_2::
+	.incbin "data/tilesets/secondary/lab_2/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Lab_2::
+	.incbin "data/tilesets/secondary/lab_2/metatile_attributes.bin"

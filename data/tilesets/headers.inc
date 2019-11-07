@@ -852,3 +852,14 @@ gTileset_AlnerwickCity::
 	.4byte gMetatiles_AlnerwickCity
 	.4byte gMetatileAttributes_AlnerwickCity
 	.4byte NULL
+
+	.align 2
+gTileset_Lab_2::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Lab_2
+	.4byte gTilesetPalettes_Lab_2
+	.4byte gMetatiles_Lab_2
+	.4byte gMetatileAttributes_Lab_2
+	.4byte NULL
