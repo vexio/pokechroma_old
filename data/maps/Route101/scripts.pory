@@ -1,3 +1,4 @@
+raw `
 Route101_MapScripts:: @ 81EBCBA
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_MapScript2_1EBCCB
@@ -298,51 +299,48 @@ Route101_Text_1EC04A: @ 81EC04A
 Route101_Text_1EC0C8: @ 81EC0C8
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
+`
 
-CanvasCreek_Sign_Lab::
-	msgbox CanvasCreek_Sign_Lab_Text_0, MSGBOX_SIGN
-	end
+const RICH_BOY_ID = 2
 
+script CanvasCreek_Sign_Lab {
+    msgbox(format("Professor Cypress' Lab"), MSGBOX_SIGN)
+    end
+}
+// end
 
-CanvasCreek_Trigger_Boy::
-	goto_if_unset FLAG_HAS_STARTER, CanvasCreek_Trigger_Boy_1
-	return
-
-CanvasCreek_Trigger_Boy_1:
-	lockall
-	applymovement 2, _CanvasCreek_RICH_BOY_MOVEMENT_0
-	waitmovement 0
-	applymovement EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_1
-	msgbox _CanvasCreek_RICH_BOY_MSG, MSGBOX_NPC
-	applymovement EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_0
-	waitmovement 0
-	releaseall
-	end
-
-
-_CanvasCreek_RICH_BOY_MOVEMENT_0:
-	walk_in_place_down
-	emote_exclamation_mark
-	delay_16
-	step_end
-
-_CanvasCreek_PLAYER_MOVEMENT_0:
-	walk_right
-	step_end
-
-_CanvasCreek_PLAYER_MOVEMENT_1:
+script CanvasCreek_Trigger_Boy {
+    if (!flag(FLAG_HAS_STARTER)) {
+        lockall
+        applymovement(RICH_BOY_ID, _CanvasCreek_RICH_BOY_MOVEMENT_0)
+        waitmovement(0)
+		applymovement(EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_1)
+        msgbox(_CanvasCreek_RICH_BOY_MSG, MSGBOX_NPC)
+        applymovement(EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_0)
+        waitmovement(0)
+        releaseall
+        end
+    }
+}
+movement _CanvasCreek_RICH_BOY_MOVEMENT_0 {
+    walk_in_place_down
+    emote_exclamation_mark
+    delay_16
+}
+text _CanvasCreek_RICH_BOY_MSG {
+    format("{COLOR BLUE}Hey!\pNo one is coming through until I find my Pokéball!")
+}
+movement _CanvasCreek_PLAYER_MOVEMENT_0 {
+    walk_right
+}
+movement _CanvasCreek_PLAYER_MOVEMENT_1 {
 	walk_in_place_up
-	step_end
+}
+// end
+//
 
-CanvasCreek_Object_Boy::
-	msgbox _CanvasCreek_RICH_BOY_MSG, MSGBOX_NPC
+script CanvasCreek_Object_Boy {
+	msgbox(_CanvasCreek_RICH_BOY_MSG, MSGBOX_NPC)
 	end
-
-
-CanvasCreek_Sign_Lab_Text_0:
-	.string "Professor Cypress' Lab$"
-
-_CanvasCreek_RICH_BOY_MSG::
-	.string "{COLOR BLUE}Hey!\p"
-	.string "No one is coming through until I find my\n"
-	.string "Pokéball!$"
+}
+// end

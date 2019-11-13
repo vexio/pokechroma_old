@@ -69,13 +69,7 @@
             "y": 29
         }
     ],
-    "connections": [
-        {
-            "direction": "left",
-            "map": "MAP_ROUTE104",
-            "offset": -50
-        }
-    ],
+    "connections": null,
     "coord_events": [
         {
             "elevation": 3,

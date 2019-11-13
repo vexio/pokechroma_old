@@ -87,19 +87,9 @@
     ],
     "connections": [
         {
-            "direction": "up",
-            "map": "MAP_RUSTBORO_CITY",
+            "direction": "left",
+            "map": "MAP_DEWFORD_TOWN",
             "offset": 0
-        },
-        {
-            "direction": "down",
-            "map": "MAP_ROUTE105",
-            "offset": 0
-        },
-        {
-            "direction": "right",
-            "map": "MAP_PETALBURG_CITY",
-            "offset": 50
         }
     ],
     "coord_events": [

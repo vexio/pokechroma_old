@@ -57,7 +57,7 @@
         },
         {
             "elevation": 3,
-            "flag": "0",
+            "flag": "FLAG_HAS_STARTER",
             "graphics_id": "EVENT_OBJ_GFX_BOY_1",
             "movement_range_x": 1,
             "movement_range_y": 1,

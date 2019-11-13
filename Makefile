@@ -134,7 +134,7 @@ include songs.mk
 %.rl: % ; $(GFX) $< $@
 sound/direct_sound_samples/cry_%.bin: sound/direct_sound_samples/cry_%.aif ; $(AIF) $< $@ --compress
 sound/%.bin: sound/%.aif ; $(AIF) $< $@
-data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@
+data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fw tools/poryscript/font_widths.json
 
 
 $(C_BUILDDIR)/libc.o: CC1 := tools/agbcc/bin/old_agbcc

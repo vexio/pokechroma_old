@@ -10,16 +10,10 @@
             "script": "Route103_EventScript_1EC5EB",
             "type": "sign",
             "x": 11,
-            "y": 9
+            "y": 8
         }
     ],
-    "connections": [
-        {
-            "direction": "down",
-            "map": "MAP_DEWFORD_TOWN",
-            "offset": -26
-        }
-    ],
+    "connections": null,
     "coord_events": [
     ],
     "id": "MAP_ROUTE103",
@@ -38,8 +32,8 @@
             "script": "Route103_EventScript_1EC5E2",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 49,
-            "y": 12
+            "x": 36,
+            "y": 14
         },
         {
             "elevation": 3,
@@ -51,8 +45,8 @@
             "script": "Route103_EventScript_1EC3C1",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 10,
-            "y": 3
+            "x": 11,
+            "y": 5
         },
         {
             "elevation": 3,
@@ -103,8 +97,8 @@
             "script": "Route103_EventScript_1EC6D1",
             "trainer_sight_or_berry_tree_id": "3",
             "trainer_type": "1",
-            "x": 50,
-            "y": 8
+            "x": 27,
+            "y": 11
         },
         {
             "elevation": 3,
@@ -168,8 +162,8 @@
             "script": "Route103_EventScript_272141",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 7,
-            "y": 3
+            "x": 9,
+            "y": 9
         },
         {
             "elevation": 3,
@@ -194,8 +188,8 @@
             "script": "Route103_EventScript_ItemGuardSpec",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 50,
-            "y": 5
+            "x": 20,
+            "y": 18
         },
         {
             "elevation": 3,
@@ -297,8 +291,8 @@
             "dest_map": "MAP_ALTERING_CAVE",
             "dest_warp_id": 0,
             "elevation": 0,
-            "x": 45,
-            "y": 6
+            "x": 31,
+            "y": 8
         }
     ],
     "weather": "WEATHER_SUNNY"

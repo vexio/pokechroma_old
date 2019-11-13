@@ -1142,7 +1142,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
 #define FLAG_UNUSED_0x493                                           0x493 // Unused Flag // CanvasTown_Trigger_RivalEncounter -> id: 3
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag // CanvasCreek_Trigger_Boy
+#define FLAG_HAS_STARTER                                            0x494 // Unused Flag // CanvasCreek_Trigger_BoyEvent
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag

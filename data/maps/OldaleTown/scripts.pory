@@ -1,3 +1,4 @@
+raw `
 OldaleTown_MapScripts:: @ 81E8EA2
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
 	.byte 0
@@ -399,12 +400,9 @@ OldaleTown_Text_1E948A: @ 81E948A
 OldaleTown_Text_1E94DA: @ 81E94DA
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
+`
 
-AlnerwickCity_Sign_TownSign::
-	msgbox AlnerwickCity_Sign_TownSign_Text_0, MSGBOX_SIGN
-	return
-
-
-AlnerwickCity_Sign_TownSign_Text_0:
-	.string "{COLOR RED}Alnerwick City\n"
-	.string "{COLOR DARK_GREY}Quiet Riverside$"
+// Signs
+script AlnerwickCity_Sign_TownSign {
+    msgbox(format("{COLOR RED}Alnerwick City\n{COLOR DARK_GREY}Quiet Riverside"), MSGBOX_SIGN)
+}

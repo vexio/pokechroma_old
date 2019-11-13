@@ -6,14 +6,6 @@
     "bg_events": [
         {
             "elevation": 0,
-            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-            "script": "DewfordTown_EventScript_1E95C3",
-            "type": "sign",
-            "x": 11,
-            "y": 16
-        },
-        {
-            "elevation": 0,
             "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
             "script": "Common_EventScript_ShowPokemonCenterSign",
             "type": "sign",
@@ -35,6 +27,14 @@
             "type": "sign",
             "x": 37,
             "y": 9
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "NULL",
+            "type": "sign",
+            "x": 32,
+            "y": 21
         }
     ],
     "connections": [
@@ -44,9 +44,9 @@
             "offset": 8
         },
         {
-            "direction": "up",
-            "map": "MAP_ROUTE103",
-            "offset": 26
+            "direction": "right",
+            "map": "MAP_ROUTE104",
+            "offset": 0
         }
     ],
     "coord_events": [
