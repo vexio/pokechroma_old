@@ -1,6 +1,6 @@
 Route101_MapScripts:: @ 81EBCBA
-	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_MapScript2_1EBCCB
+@	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
+@	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_MapScript2_1EBCCB
 	.byte 0
 
 Route101_OnTransition: @ 81EBCC5
@@ -12,8 +12,8 @@ Route101_MapScript2_1EBCCB: @ 81EBCCB
 	.2byte 0
 
 Route101_EventScript_1EBCD5:: @ 81EBCD5
-@	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE101_STATE, 1
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+@	setvar VAR_ROUTE101_STATE, 1
 	end
 
 Route101_EventScript_1EBCDE:: @ 81EBCDE
@@ -234,8 +234,8 @@ Route101_EventScript_1EBE16:: @ 81EBE16
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
-	setvar VAR_BIRCH_LAB_STATE, 2
-	setvar VAR_ROUTE101_STATE, 3
+@	setvar VAR_BIRCH_LAB_STATE, 2
+@	setvar VAR_ROUTE101_STATE, 3
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 	compare VAR_RESULT, MALE
@@ -304,16 +304,25 @@ CanvasCreek_Sign_Lab::
 	end
 
 
+CanvasCreek_Route_Sign::
+	msgbox CanvasCreek_Route_Sign_Text_0, MSGBOX_SIGN
+	end
+
+
 CanvasCreek_Trigger_Boy::
-	goto_if_unset FLAG_HAS_STARTER, CanvasCreek_Trigger_Boy_1
+	compare VAR_HAS_STARTER, 0
+	goto_if_eq CanvasCreek_Trigger_Boy_1
 	return
 
 CanvasCreek_Trigger_Boy_1:
 	lockall
 	applymovement 2, _CanvasCreek_RICH_BOY_MOVEMENT_0
 	waitmovement 0
+	playse SE_PIN
+	delay 10
 	applymovement EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_1
-	msgbox _CanvasCreek_RICH_BOY_MSG, MSGBOX_NPC
+	msgbox _CanvasCreek_RICH_BOY_MSG
+	closemessage
 	applymovement EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_0
 	waitmovement 0
 	releaseall
@@ -321,17 +330,16 @@ CanvasCreek_Trigger_Boy_1:
 
 
 _CanvasCreek_RICH_BOY_MOVEMENT_0:
-	walk_in_place_down
+	walk_in_place_left
 	emote_exclamation_mark
-	delay_16
 	step_end
 
 _CanvasCreek_PLAYER_MOVEMENT_0:
-	walk_right
+	walk_down
 	step_end
 
 _CanvasCreek_PLAYER_MOVEMENT_1:
-	walk_in_place_up
+	walk_in_place_right
 	step_end
 
 CanvasCreek_Object_Boy::
@@ -341,6 +349,11 @@ CanvasCreek_Object_Boy::
 
 CanvasCreek_Sign_Lab_Text_0:
 	.string "Professor Cypress' Lab$"
+
+CanvasCreek_Route_Sign_Text_0:
+	.string "{LEFT_ARROW} Alnerwick City\n"
+	.string "{RIGHT_ARROW} Professor Cypress's Lab\p"
+	.string "{DOWN_ARROW} Canvas Town$"
 
 _CanvasCreek_RICH_BOY_MSG::
 	.string "{COLOR BLUE}Hey!\p"

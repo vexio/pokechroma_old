@@ -92,18 +92,18 @@
 #define VAR_POKELOT_RND1                     0x404B
 #define VAR_POKELOT_RND2                     0x404C
 #define VAR_POKELOT_PRIZE_PLACE              0x404D
-#define VAR_UNUSED_0x404E                    0x404E // Unused Var // Script: CanvasTown_Trigger_RivalEncounter
+#define VAR_CANVASTOWN_RIVAL_ENCOUNTER       0x404E // Unused Var // Script: CanvasTown_Trigger_RivalEncounter
 #define VAR_LOTAD_SIZE_RECORD                0x404F
 #define VAR_0x4050                           0x4050
 #define VAR_ROUTE102_ACCESSIBLE              0x4051
-#define VAR_UNUSED_0x4052                    0x4052 // Unused Var
+#define VAR_TRIGGER_POS                      0x4052 // Unused Var // Used for dynamic locations for trigger scripts
 #define VAR_LAVARIDGE_RIVAL_STATE            0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054
-#define VAR_UNUSED_0x4055                    0x4055 // Unused Var
-#define VAR_UNUSED_0x4056                    0x4056 // Unused Var
+#define VAR_PLAYERS_HOUSE_ROOMEXIT_EVENT     0x4055 // Unused Var // PlayersHouse Room Exit Event (LittlerootTown_BrendansHouse_1F)
+#define VAR_HAS_STARTER                      0x4056 // Unused Var // Player has a starter Pokémon 0 = no; 1 = yes
 #define VAR_PETALBURG_STATE                  0x4057
 #define VAR_SLATEPORT_STATE                  0x4058
-#define VAR_UNUSED_0x4059                    0x4059 // Unused Var
+#define VAR_ALNERWICKCITY_ROBBERY            0x4059 // Unused Var // AlnerwickCity Robbery Event
 #define VAR_RUSTBORO_STATE                   0x405A
 #define VAR_UNUSED_0x405B                    0x405B // Unused Var
 #define VAR_UNUSED_0x405C                    0x405C // Unused Var

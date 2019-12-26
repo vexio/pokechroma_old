@@ -1,7 +1,8 @@
 LittlerootTown_BrendansHouse_1F_MapScripts:: @ 81F7755
 @	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_MapScript1_1F7765
+    map_script MAP_SCRIPT_ON_FRAME_TABLE, PlayersHouse_Mapscript2_Init
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_MapScript1_1F77A4
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_MapScript2_1F77EA
+@	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_MapScript2_1F77EA
 	.byte 0
 
 @LittlerootTown_BrendansHouse_1F_MapScript1_1F7765: @ 81F7765
@@ -448,3 +449,65 @@ LittlerootTown_BrendansHouse_1F_Text_1F8351: @ 81F8351
 LittlerootTown_BrendansHouse_1F_Text_1F83A1: @ 81F83A1
 	.string "MOM: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
+
+PlayersHouse_Mapscript2_Init::
+	map_script_2 VAR_PLAYERS_HOUSE_ROOMEXIT_EVENT, 0, PlayersHouse_Mapscript_RoomExit
+	.2byte 0
+
+PlayersHouse_Mapscript_RoomExit::
+	compare VAR_PLAYERS_HOUSE_ROOMEXIT_EVENT, 0
+	goto_if_eq PlayersHouse_Mapscript_RoomExit_1
+	return
+
+PlayersHouse_Mapscript_RoomExit_1:
+	applymovement 1, PlayersHouse_RoomExit_Sub_Movement_0
+	waitmovement 0
+	playse SE_PIN
+	delay 10
+	msgbox PlayersHouse_Mapscript_RoomExit_Text_0
+	closemessage
+	applymovement 1, PlayersHouse_RoomExit_Sub_Movement_1
+	waitmovement 0
+	delay 10
+	msgbox PlayersHouse_Mapscript_RoomExit_Text_1
+	closemessage
+	applymovement 1, PlayersHouse_RoomExit_Sub_Movement_2
+	waitmovement 0
+	setvar VAR_PLAYERS_HOUSE_ROOMEXIT_EVENT, 1
+	release
+	end
+
+
+PlayersHouse_RoomExit_Sub_Movement_0:
+	walk_in_place_up
+	emote_exclamation_mark
+	step_end
+
+PlayersHouse_RoomExit_Sub_Movement_1:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_in_place_right
+	step_end
+
+PlayersHouse_RoomExit_Sub_Movement_2:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_left
+	step_end
+
+PlayersHouse_Mapscript_RoomExit_Text_0:
+	.string "Mom: {COLOR RED}There you are!$"
+
+PlayersHouse_Mapscript_RoomExit_Text_1:
+	.string "Mom: {COLOR GREEN}Ryder{COLOR RED} has been waiting for you all\n"
+	.string "day!\p"
+	.string "{COLOR DARK_GREY}Mom:{COLOR RED} I wouldn't be surprised if he\n"
+	.string "already claimed his starter Pokémon...\p"
+	.string "{COLOR DARK_GREY}Mom:{COLOR RED} Well, don't make {COLOR GREEN}Professor Cypress{COLOR RED}\n"
+	.string "wait on you any longer!\p"
+	.string "Her lab is just North of here.\p"
+	.string "{COLOR DARK_GREY}Mom:{COLOR RED} Now get going!$"

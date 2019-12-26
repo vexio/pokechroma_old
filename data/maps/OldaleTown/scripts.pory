@@ -406,3 +406,45 @@ OldaleTown_Text_1E94DA: @ 81E94DA
 script AlnerwickCity_Sign_TownSign {
     msgbox(format("{COLOR RED}Alnerwick City\n{COLOR DARK_GREY}Quiet Riverside"), MSGBOX_SIGN)
 }
+const OLD_LADY = 6
+const GRUNT = 5
+
+// AlnerwickRobbery Event
+script AlnerwickCity_Robbery_Event {
+	if (var(VAR_ALNERWICKCITY_ROBBERY) == 0) {
+		lockall
+		msgbox(format("???: {COLOR RED}Help!"))
+		delay(10)
+		closemessage
+		applymovement(OLD_LADY, AlnerwickCity_Robbery_Movement_0)
+		waitmovement(0)
+		msgbox(format("Old Lady: {COLOR RED}This smug man is trying to steal my beloved literature!"))
+		closemessage
+		applymovement(GRUNT, AlnerwickCity_Robbery_Movement_1)
+		waitmovement(0)
+		msgbox(format("Grunt: {COLOR BLUE}Don't make me use my Koffing ye' old slag!"))
+		closemessage
+		applymovement(OLD_LADY, AlnerwickCity_Robbery_Movement_2)
+		waitmovement(0)
+		msgbox(format("Old Lady: {COLOR RED}You don't deserve what this book pertains!"))
+		closemessage
+		applymovement(OLD_LADY, AlnerwickCity_Robbery_Movement_3)
+		msgbox(format("Old Lady: {COLOR RED}Trainer, please get this man away from me!"))
+		closemessage
+		applymovement(GRUNT, AlnerwickCity_Robbery_Movement_3)
+		waitmovement(0)
+		msgbox(format("Grunt: {COLOR BLUE}Who do you think you are, kid?"))
+	}
+}
+movement AlnerwickCity_Robbery_Movement_0 {
+	walk_fast_down * 6
+}
+movement AlnerwickCity_Robbery_Movement_1 {
+	walk_down * 6
+}
+movement AlnerwickCity_Robbery_Movement_2 {
+	walk_in_place_up
+}
+movement AlnerwickCity_Robbery_Movement_3 {
+	walk_in_place_down
+}

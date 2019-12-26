@@ -24,7 +24,7 @@
             "script": "DewfordTown_PokemonCenter_1F_EventScript_1FC537",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 7,
+            "x": 6,
             "y": 2
         },
         {
@@ -37,7 +37,7 @@
             "script": "DewfordTown_PokemonCenter_1F_EventScript_1FC545",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 10,
+            "x": 9,
             "y": 6
         },
         {
@@ -50,8 +50,8 @@
             "script": "DewfordTown_PokemonCenter_1F_EventScript_1FC54E",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 5,
-            "y": 5
+            "x": 4,
+            "y": 4
         }
     ],
     "region_map_section": "MAPSEC_DEWFORD_TOWN",
@@ -62,22 +62,8 @@
             "dest_map": "MAP_DEWFORD_TOWN",
             "dest_warp_id": 1,
             "elevation": 3,
-            "x": 7,
-            "y": 8
-        },
-        {
-            "dest_map": "MAP_DEWFORD_TOWN",
-            "dest_warp_id": 1,
-            "elevation": 3,
             "x": 6,
             "y": 8
-        },
-        {
-            "dest_map": "MAP_DEWFORD_TOWN_POKEMON_CENTER_2F",
-            "dest_warp_id": 0,
-            "elevation": 4,
-            "x": 1,
-            "y": 6
         }
     ],
     "weather": "WEATHER_NONE"

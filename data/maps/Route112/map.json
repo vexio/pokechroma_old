@@ -36,11 +36,6 @@
             "offset": -60
         },
         {
-            "direction": "left",
-            "map": "MAP_LAVARIDGE_TOWN",
-            "offset": 40
-        },
-        {
             "direction": "right",
             "map": "MAP_ROUTE111",
             "offset": -20

@@ -2,6 +2,7 @@ LittlerootTown_ProfessorBirchsLab_MapScripts:: @ 81F9C91
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_MapScript1_1F9CA1
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_ProfessorBirchsLab_MapScript2_1F9D06
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_ProfessorBirchsLab_MapScript2_1F9DB9
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CypressLab_Mapscript2_Init
 	.byte 0
 
 LittlerootTown_ProfessorBirchsLab_MapScript1_1F9CA1: @ 81F9CA1
@@ -1024,3 +1025,237 @@ LittlerootTown_ProfessorBirchsLab_Text_1FBD1A: @ 81FBD1A
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
+
+CypressLab_Mapscript2_Init::
+	map_script_2 VAR_HAS_STARTER, 1, CypressLab_ProfPosition
+	.2byte 0
+
+CypressLab_ProfPosition::
+	compare VAR_HAS_STARTER, 1
+	goto_if_eq CypressLab_ProfPosition_1
+	return
+
+CypressLab_ProfPosition_1:
+	setobjectxy 1, 15, 10
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+
+CypressLab_GetStarter_Event::
+	compare VAR_HAS_STARTER, 0
+	goto_if_eq CypressLab_GetStarter_Event_1
+	return
+
+CypressLab_GetStarter_Event_1:
+	lockall
+	applymovement 1, _CypressLab_GetStarter_Movement_0
+	waitmovement 0
+	playse SE_PIN
+	msgbox CypressLab_GetStarter_Event_Text_0
+	applymovement EVENT_OBJ_ID_PLAYER, _CypressLab_GetStarter_Movement_4
+	delay 10
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 5
+	goto_if_eq CypressLab_GetStarter_Event_4
+	compare VAR_TEMP_0, 6
+	goto_if_eq CypressLab_GetStarter_Event_5
+	compare VAR_TEMP_0, 7
+	goto_if_eq CypressLab_GetStarter_Event_6
+CypressLab_GetStarter_Event_3:
+	msgbox CypressLab_GetStarter_Event_Text_2
+	closemessage
+	applymovement 1, _CypressLab_GetStarter_Movement_2
+	waitmovement 0
+	msgbox CypressLab_GetStarter_Event_Text_3
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, _CypressLab_GetStarter_Movement_3
+	waitmovement 0
+	delay 10
+	special ChooseStarter
+	waitstate
+	bufferleadmonspeciesname 0
+	playfanfare MUS_FANFA4
+	msgbox CypressLab_GetStarter_Event_Text_4
+	waitfanfare
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, _CypressLab_GetStarter_Movement_4
+	waitmovement 0
+	msgbox CypressLab_GetStarter_Event_Text_5
+	closemessage
+	delay 10
+	applymovement 1, _CypressLab_GetStarter_Movement_2
+	waitmovement 0
+	playfanfare MUS_FANFA4
+	msgbox CypressLab_GetStarter_Event_Text_6
+	giveitem ITEM_POKE_BALL, 10
+	waitfanfare
+	closemessage
+	playfanfare MUS_FANFA4
+	msgbox CypressLab_GetStarter_Event_Text_7
+	giveitem ITEM_POTION, 5
+	waitfanfare
+	closemessage
+	playfanfare MUS_FANFA4
+	msgbox CypressLab_GetStarter_Event_Text_8
+	waitfanfare
+	closemessage
+	playfanfare MUS_FANFA4
+	msgbox CypressLab_GetStarter_Event_Text_9
+	waitfanfare
+	closemessage
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_POKEDEX_GET
+	special sub_81AFDA0
+	delay 10
+	msgbox CypressLab_GetStarter_Event_Text_10
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, _CypressLab_GetStarter_Movement_5
+	waitmovement 0
+	applymovement 1, _CypressLab_GetStarter_Movement_7
+	waitmovement 0
+	delay 5
+	msgbox CypressLab_GetStarter_Event_Text_11
+	closemessage
+	applymovement 1, _CypressLab_GetStarter_Movement_6
+	waitmovement 0
+	setvar VAR_HAS_STARTER, 1
+	setflag FLAG_HAS_STARTER
+	setobjectxy 1, 15, 10
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	releaseall
+	end
+
+CypressLab_GetStarter_Event_4:
+	msgbox CypressLab_GetStarter_Event_Text_1
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, _CypressLab_GetStarter_Movement_1_0
+	waitmovement 0
+	goto CypressLab_GetStarter_Event_3
+
+CypressLab_GetStarter_Event_5:
+	msgbox CypressLab_GetStarter_Event_Text_1
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, _CypressLab_GetStarter_Movement_1_1
+	waitmovement 0
+	goto CypressLab_GetStarter_Event_3
+
+CypressLab_GetStarter_Event_6:
+	msgbox CypressLab_GetStarter_Event_Text_1
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, _CypressLab_GetStarter_Movement_1_2
+	waitmovement 0
+	goto CypressLab_GetStarter_Event_3
+
+
+_CypressLab_GetStarter_Movement_0:
+	walk_in_place_right
+	emote_exclamation_mark
+	step_end
+
+_CypressLab_GetStarter_Movement_1_0:
+	walk_left
+	step_end
+
+_CypressLab_GetStarter_Movement_1_1:
+	walk_left
+	walk_left
+	step_end
+
+_CypressLab_GetStarter_Movement_1_2:
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+_CypressLab_GetStarter_Movement_2:
+	walk_in_place_right
+	step_end
+
+_CypressLab_GetStarter_Movement_3:
+	walk_in_place_up
+	step_end
+
+_CypressLab_GetStarter_Movement_4:
+	walk_in_place_left
+	step_end
+
+_CypressLab_GetStarter_Movement_5:
+	walk_right
+	walk_up
+	walk_in_place_down
+	step_end
+
+_CypressLab_GetStarter_Movement_6:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+
+_CypressLab_GetStarter_Movement_7:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_left
+	step_end
+
+CypressLab_GetStarter_Event_Text_0:
+	.string "Prof. Cypress: {COLOR RED}Ah!\n"
+	.string "There you are!$"
+
+CypressLab_GetStarter_Event_Text_1:
+	.string "Prof. Cypress:{COLOR RED} You're late!$"
+
+CypressLab_GetStarter_Event_Text_2:
+	.string "Prof. Cypress: {COLOR RED}I almost signed you off\n"
+	.string "as M.I.A for the {COLOR GREEN}Ryoko League\l"
+	.string "Challenge{COLOR RED}!\p"
+	.string "{COLOR DARK_GREY}Prof. Cypress:{COLOR RED} Anyways, it's time for\n"
+	.string "you to choose your first Pokémon!$"
+
+CypressLab_GetStarter_Event_Text_3:
+	.string "Prof. Cypress:{COLOR RED} Go ahead, look inside!$"
+
+CypressLab_GetStarter_Event_Text_4:
+	.string "{PLAYER} received a {STR_VAR_1}$"
+
+CypressLab_GetStarter_Event_Text_5:
+	.string "Prof. Cypress:{COLOR RED} Interesting choice!\n"
+	.string "I can tell it likes you!\p"
+	.string "{COLOR DARK_GREY}Prof. Cypress:{COLOR RED} Now that you have your\n"
+	.string "first Pokémon, I'm required to give you\l"
+	.string "some starting items.$"
+
+CypressLab_GetStarter_Event_Text_6:
+	.string "{PLAYER} received 10 Poké Balls$"
+
+CypressLab_GetStarter_Event_Text_7:
+	.string "{PLAYER} received 5 Potions$"
+
+CypressLab_GetStarter_Event_Text_8:
+	.string "{PLAYER} received the Running Shoes\p"
+	.string "(Hold B to Run)$"
+
+CypressLab_GetStarter_Event_Text_9:
+	.string "{PLAYER} received the Pokédex$"
+
+CypressLab_GetStarter_Event_Text_10:
+	.string "Prof. Cypress:{COLOR RED} Now, {PLAYER}.\p"
+	.string "Begin your journey!\p"
+	.string "{COLOR DARK_GREY}Prof. Cypress:{COLOR RED} Start the Ryoko League\n"
+	.string "Challenge!\p"
+	.string "{COLOR DARK_GREY}Prof. Cypress:{COLOR RED} Now, I must get back to\n"
+	.string "work!\n"
+	.string "I'm mighty busy.$"
+
+CypressLab_GetStarter_Event_Text_11:
+	.string "Prof. Cypress:{COLOR RED} Oh!\n"
+	.string "Before I forget, your first Gym\l"
+	.string "Challenge will be located in {COLOR GREEN}Davnridge\l"
+	.string "Town{COLOR RED}.\p"
+	.string "{COLOR DARK_GREY}Prof. Cypress:{COLOR RED} Now, run along!$"

@@ -1789,3 +1789,23 @@ gTilesetPalettes_Lab_2::
 	.align 2
 gTilesetTiles_Lab_2::
 	.incbin "data/tilesets/secondary/lab_2/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Pineridge::
+	.incbin "data/tilesets/secondary/pineridge/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Pineridge::
+	.incbin "data/tilesets/secondary/pineridge/tiles.4bpp.lz"

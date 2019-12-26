@@ -433,6 +433,20 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define EVENT_OBJ_PAL_FAT_MAN_2 0x1124
 #define EVENT_OBJ_PAL_GIRL_1 0x1125
 #define EVENT_OBJ_PAL_BOY_1 0x1126
+#define EVENT_OBJ_PAL_BRANDON 0x1127
+#define EVENT_OBJ_PAL_YOUNGSTER 0x1128
+#define EVENT_OBJ_PAL_SCIENTIST1 0x1129
+#define EVENT_OBJ_PAL_SCIENTIST2 0x112A
+#define EVENT_OBJ_PAL_ARTIST 0x112B
+#define EVENT_OBJ_PAL_EXPERT_F 0x112C
+#define EVENT_OBJ_PAL_EXPERT_M 0x112D
+#define EVENT_OBJ_PAL_GENTLEMAN 0x112E
+#define EVENT_OBJ_PAL_MAN_3 0x112F
+#define EVENT_OBJ_PAL_CUTTABLE_TREE 0x1130
+#define EVENT_OBJ_PAL_HIKER 0x1131
+#define EVENT_OBJ_PAL_CAMPER_PICNICKER 0x1132
+#define EVENT_OBJ_PAL_BLACK_BELT 0x1133
+#define EVENT_OBJ_PAL_HERO 0x1134
 #define EVENT_OBJ_PAL_TAG_NONE 0x11FF
 
 #include "data/field_event_obj/event_object_graphics_info_pointers.h"
@@ -482,6 +496,20 @@ const struct SpritePalette sEventObjectSpritePalettes[] = {
     {gEventObjectPalette_Fat_Man_2, EVENT_OBJ_PAL_FAT_MAN_2},
     {gEventObjectPalette_Girl_1, EVENT_OBJ_PAL_GIRL_1},
     {gEventObjectPalette_Boy_1, EVENT_OBJ_PAL_BOY_1},
+    {gEventObjectPalette_Brandon, EVENT_OBJ_PAL_BRANDON},
+    {gEventObjectPalette_Youngster, EVENT_OBJ_PAL_YOUNGSTER},
+    {gEventObjectPalette_Scientist1, EVENT_OBJ_PAL_SCIENTIST1},
+    {gEventObjectPalette_Scientist2, EVENT_OBJ_PAL_SCIENTIST2},
+    {gEventObjectPalette_Artist, EVENT_OBJ_PAL_ARTIST},
+    {gEventObjectPalette_ExpertF, EVENT_OBJ_PAL_EXPERT_F},
+    {gEventObjectPalette_ExpertM, EVENT_OBJ_PAL_EXPERT_M},
+    {gEventObjectPalette_Gentleman, EVENT_OBJ_PAL_GENTLEMAN},
+    {gEventObjectPalette_Man3, EVENT_OBJ_PAL_MAN_3},
+    {gEventObjectPalette_CuttableTree, EVENT_OBJ_PAL_CUTTABLE_TREE},
+    {gEventObjectPalette_Hiker, EVENT_OBJ_PAL_HIKER},
+    {gEventObjectPalette_Camper_Picnicker, EVENT_OBJ_PAL_CAMPER_PICNICKER},
+    {gEventObjectPalette_BlackBelt, EVENT_OBJ_PAL_BLACK_BELT},
+    {gEventObjectPalette_Hero, EVENT_OBJ_PAL_HERO},
     {NULL, 0x0000},
 };
 

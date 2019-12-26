@@ -10,7 +10,7 @@
             "script": "CanvasTown_Script_TownSign",
             "type": "sign",
             "x": 12,
-            "y": 5
+            "y": 7
         },
         {
             "elevation": 0,
@@ -18,7 +18,7 @@
             "script": "CanvasTown_Script_RivalsHouse",
             "type": "sign",
             "x": 9,
-            "y": 5
+            "y": 7
         },
         {
             "elevation": 0,
@@ -26,15 +26,7 @@
             "script": "CanvasTown_Script_PlayersHouse",
             "type": "sign",
             "x": 22,
-            "y": 9
-        },
-        {
-            "elevation": 0,
-            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-            "script": "CanvasTown_Sign_Directions_0",
-            "type": "sign",
-            "x": 18,
-            "y": 2
+            "y": 11
         }
     ],
     "connections": [
@@ -49,28 +41,55 @@
             "elevation": 0,
             "script": "CanvasTown_Trigger_RivalEncounter",
             "type": "trigger",
-            "var": "VAR_UNUSED_0x404E",
+            "var": "VAR_CANVASTOWN_RIVAL_ENCOUNTER",
             "var_value": "0",
-            "x": 16,
+            "x": 12,
             "y": 9
         },
         {
             "elevation": 0,
-            "script": "CanvasTown_Trigger_RivalEncounter_Left",
+            "script": "CanvasTown_Trigger_RivalEncounter",
             "type": "trigger",
-            "var": "VAR_UNUSED_0x404E",
+            "var": "VAR_CANVASTOWN_RIVAL_ENCOUNTER",
+            "var_value": "0",
+            "x": 12,
+            "y": 10
+        },
+        {
+            "elevation": 0,
+            "script": "CanvasTown_Trigger_RivalEncounter",
+            "type": "trigger",
+            "var": "VAR_CANVASTOWN_RIVAL_ENCOUNTER",
+            "var_value": "0",
+            "x": 12,
+            "y": 8
+        },
+        {
+            "elevation": 0,
+            "script": "CanvasTown_Trigger_NoExitYet",
+            "type": "trigger",
+            "var": "VAR_CANVASTOWN_RIVAL_ENCOUNTER",
             "var_value": "0",
             "x": 15,
-            "y": 9
+            "y": 5
         },
         {
             "elevation": 0,
-            "script": "CanvasTown_Trigger_RivalEncounter_Right",
+            "script": "CanvasTown_Trigger_NoExitYet",
             "type": "trigger",
-            "var": "VAR_UNUSED_0x404E",
+            "var": "VAR_CANVASTOWN_RIVAL_ENCOUNTER",
             "var_value": "0",
             "x": 17,
-            "y": 9
+            "y": 5
+        },
+        {
+            "elevation": 0,
+            "script": "CanvasTown_Trigger_NoExitYet",
+            "type": "trigger",
+            "var": "VAR_CANVASTOWN_RIVAL_ENCOUNTER",
+            "var_value": "0",
+            "x": 16,
+            "y": 5
         }
     ],
     "id": "MAP_LITTLEROOT_TOWN",
@@ -85,12 +104,12 @@
             "graphics_id": "EVENT_OBJ_GFX_FAT_MAN",
             "movement_range_x": 2,
             "movement_range_y": 1,
-            "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
             "script": "CanvasTown_Script_FatMan",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 15,
-            "y": 11
+            "x": 14,
+            "y": 17
         },
         {
             "elevation": 3,
@@ -102,12 +121,25 @@
             "script": "CanvasTown_Script_Woman",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 18,
-            "y": 4
+            "x": 14,
+            "y": 5
         },
         {
             "elevation": 3,
-            "flag": "FLAG_UNUSED_0x493",
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_YOUNGSTER",
+            "movement_range_x": 3,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+            "script": "CanvasTown_Object_Youngster",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 20,
+            "y": 14
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_CANVASTOWN_RIVAL",
             "graphics_id": "EVENT_OBJ_GFX_BRANDON",
             "movement_range_x": 0,
             "movement_range_y": 0,
@@ -115,8 +147,8 @@
             "script": "NULL",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 16,
-            "y": 3
+            "x": 7,
+            "y": 6
         }
     ],
     "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
@@ -128,14 +160,14 @@
             "dest_warp_id": 0,
             "elevation": 0,
             "x": 7,
-            "y": 5
+            "y": 7
         },
         {
             "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
             "dest_warp_id": 0,
             "elevation": 0,
             "x": 24,
-            "y": 9
+            "y": 11
         }
     ],
     "weather": "WEATHER_SUNNY"

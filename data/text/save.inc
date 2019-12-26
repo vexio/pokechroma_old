@@ -7,13 +7,13 @@ gText_AlreadySavedFile:: @ 82C87D5
 
 gText_SavingDontTurnOff:: @ 82C8810
 	.string "SAVING…\n"
-	.string "{COLOR RED}DON'T TURN OFF THE POWER.$"
+	.string "{COLOR RED}{SHADOW LIGHT_RED}DON'T TURN OFF THE POWER.$"
 
 gText_PlayerSavedGame:: @ 82C8832
 	.string "{COLOR GREEN}{PLAYER} saved the game.$"
 
 gText_DifferentSaveFile:: @ 82C8845
-	.string "{COLOR RED}WARNING!\p"
+	.string "{COLOR RED}{SHADOW LIGHT_RED}WARNING!\p"
 	.string "{COLOR DARK_GREY}There is a different game file that\n"
 	.string "is already saved.\p"
 	.string "If you save now, the other file's\n"
@@ -29,4 +29,4 @@ gText_SaveError:: @ 82C892A
 
 gText_SavingDontTurnOffPower:: @ 82C8959
 	.string "SAVING…\n"
-	.string "{COLOR RED}DON'T TURN OFF THE POWER.$"
+	.string "{COLOR RED}{SHADOW LIGHT_RED}DON'T TURN OFF THE POWER.$"

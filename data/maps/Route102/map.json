@@ -4,14 +4,6 @@
     "allow_running": true,
     "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
     "bg_events": [
-        {
-            "elevation": 0,
-            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-            "script": "Route102_EventScript_1EC0EA",
-            "type": "sign",
-            "x": 40,
-            "y": 9
-        }
     ],
     "connections": [
         {
@@ -49,14 +41,14 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "EVENT_OBJ_GFX_YOUNGSTER",
+            "graphics_id": "EVENT_OBJ_GFX_HIKER",
             "movement_range_x": 0,
             "movement_range_y": 0,
-            "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
             "script": "Route102_EventScript_1EC105",
-            "trainer_sight_or_berry_tree_id": "5",
+            "trainer_sight_or_berry_tree_id": "2",
             "trainer_type": "1",
-            "x": 49,
+            "x": 48,
             "y": 10
         },
         {
@@ -80,10 +72,10 @@
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
             "script": "Route102_EventScript_1EC1CA",
-            "trainer_sight_or_berry_tree_id": "3",
+            "trainer_sight_or_berry_tree_id": "4",
             "trainer_type": "1",
             "x": 8,
-            "y": 12
+            "y": 17
         },
         {
             "elevation": 3,
@@ -95,8 +87,8 @@
             "script": "Route102_EventScript_1EC0FC",
             "trainer_sight_or_berry_tree_id": "1",
             "trainer_type": "0",
-            "x": 45,
-            "y": 16
+            "x": 44,
+            "y": 15
         },
         {
             "elevation": 3,
@@ -114,7 +106,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "EVENT_OBJ_GFX_YOUNGSTER",
+            "graphics_id": "EVENT_OBJ_GFX_FISHERMAN",
             "movement_range_x": 1,
             "movement_range_y": 1,
             "movement_type": "MOVEMENT_TYPE_FACE_DOWN",

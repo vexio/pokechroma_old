@@ -863,3 +863,14 @@ gTileset_Lab_2::
 	.4byte gMetatiles_Lab_2
 	.4byte gMetatileAttributes_Lab_2
 	.4byte NULL
+
+	.align 2
+gTileset_Pineridge::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Pineridge
+	.4byte gTilesetPalettes_Pineridge
+	.4byte gMetatiles_Pineridge
+	.4byte gMetatileAttributes_Pineridge
+	.4byte NULL

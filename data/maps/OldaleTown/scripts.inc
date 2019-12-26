@@ -405,6 +405,85 @@ AlnerwickCity_Sign_TownSign::
 	return
 
 
+AlnerwickCity_Robbery_Event::
+	compare VAR_ALNERWICKCITY_ROBBERY, 0
+	goto_if_eq AlnerwickCity_Robbery_Event_1
+	return
+
+AlnerwickCity_Robbery_Event_1:
+	lockall
+	msgbox AlnerwickCity_Robbery_Event_Text_0
+	delay 10
+	closemessage
+	applymovement 6, AlnerwickCity_Robbery_Movement_0
+	waitmovement 0
+	msgbox AlnerwickCity_Robbery_Event_Text_1
+	closemessage
+	applymovement 5, AlnerwickCity_Robbery_Movement_1
+	waitmovement 0
+	msgbox AlnerwickCity_Robbery_Event_Text_2
+	closemessage
+	applymovement 6, AlnerwickCity_Robbery_Movement_2
+	waitmovement 0
+	msgbox AlnerwickCity_Robbery_Event_Text_3
+	closemessage
+	applymovement 6, AlnerwickCity_Robbery_Movement_3
+	msgbox AlnerwickCity_Robbery_Event_Text_4
+	closemessage
+	applymovement 5, AlnerwickCity_Robbery_Movement_3
+	waitmovement 0
+	msgbox AlnerwickCity_Robbery_Event_Text_5
+	return
+
+
+AlnerwickCity_Robbery_Movement_0:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+AlnerwickCity_Robbery_Movement_1:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+AlnerwickCity_Robbery_Movement_2:
+	walk_in_place_up
+	step_end
+
+AlnerwickCity_Robbery_Movement_3:
+	walk_in_place_down
+	step_end
+
 AlnerwickCity_Sign_TownSign_Text_0:
 	.string "{COLOR RED}Alnerwick City\n"
 	.string "{COLOR DARK_GREY}Quiet Riverside$"
+
+AlnerwickCity_Robbery_Event_Text_0:
+	.string "???: {COLOR RED}Help!$"
+
+AlnerwickCity_Robbery_Event_Text_1:
+	.string "Old Lady: {COLOR RED}This smug man is trying to\n"
+	.string "steal my beloved literature!$"
+
+AlnerwickCity_Robbery_Event_Text_2:
+	.string "Grunt: {COLOR BLUE}Don't make me use my Koffing ye'\n"
+	.string "old slag!$"
+
+AlnerwickCity_Robbery_Event_Text_3:
+	.string "Old Lady: {COLOR RED}You don't deserve what this\n"
+	.string "book pertains!$"
+
+AlnerwickCity_Robbery_Event_Text_4:
+	.string "Old Lady: {COLOR RED}Trainer, please get this man\n"
+	.string "away from me!$"
+
+AlnerwickCity_Robbery_Event_Text_5:
+	.string "Grunt: {COLOR BLUE}Who do you think you are, kid?$"

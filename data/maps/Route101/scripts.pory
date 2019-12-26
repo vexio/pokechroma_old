@@ -1,7 +1,7 @@
 raw `
 Route101_MapScripts:: @ 81EBCBA
-	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_MapScript2_1EBCCB
+@	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
+@	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_MapScript2_1EBCCB
 	.byte 0
 
 Route101_OnTransition: @ 81EBCC5
@@ -13,8 +13,8 @@ Route101_MapScript2_1EBCCB: @ 81EBCCB
 	.2byte 0
 
 Route101_EventScript_1EBCD5:: @ 81EBCD5
-@	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE101_STATE, 1
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+@	setvar VAR_ROUTE101_STATE, 1
 	end
 
 Route101_EventScript_1EBCDE:: @ 81EBCDE
@@ -235,8 +235,8 @@ Route101_EventScript_1EBE16:: @ 81EBE16
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
-	setvar VAR_BIRCH_LAB_STATE, 2
-	setvar VAR_ROUTE101_STATE, 3
+@	setvar VAR_BIRCH_LAB_STATE, 2
+@	setvar VAR_ROUTE101_STATE, 3
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 	compare VAR_RESULT, MALE
@@ -307,15 +307,23 @@ script CanvasCreek_Sign_Lab {
     msgbox(format("Professor Cypress' Lab"), MSGBOX_SIGN)
     end
 }
+
+script CanvasCreek_Route_Sign {
+	msgbox(format("{LEFT_ARROW} Alnerwick City\n{RIGHT_ARROW} Professor Cypress's Lab\p{DOWN_ARROW} Canvas Town"), MSGBOX_SIGN)
+	end
+}
 // end
 
 script CanvasCreek_Trigger_Boy {
-    if (!flag(FLAG_HAS_STARTER)) {
+    if (!var(VAR_HAS_STARTER)) {
         lockall
         applymovement(RICH_BOY_ID, _CanvasCreek_RICH_BOY_MOVEMENT_0)
         waitmovement(0)
+		playse(SE_PIN)
+		delay(10)
 		applymovement(EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_1)
-        msgbox(_CanvasCreek_RICH_BOY_MSG, MSGBOX_NPC)
+        msgbox(_CanvasCreek_RICH_BOY_MSG)
+		closemessage
         applymovement(EVENT_OBJ_ID_PLAYER, _CanvasCreek_PLAYER_MOVEMENT_0)
         waitmovement(0)
         releaseall
@@ -323,18 +331,17 @@ script CanvasCreek_Trigger_Boy {
     }
 }
 movement _CanvasCreek_RICH_BOY_MOVEMENT_0 {
-    walk_in_place_down
-    emote_exclamation_mark
-    delay_16
+	walk_in_place_left
+	emote_exclamation_mark
 }
 text _CanvasCreek_RICH_BOY_MSG {
     format("{COLOR BLUE}Hey!\pNo one is coming through until I find my Pokéball!")
 }
 movement _CanvasCreek_PLAYER_MOVEMENT_0 {
-    walk_right
+    walk_down
 }
 movement _CanvasCreek_PLAYER_MOVEMENT_1 {
-	walk_in_place_up
+	walk_in_place_right
 }
 // end
 //

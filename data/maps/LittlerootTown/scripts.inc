@@ -49,19 +49,19 @@ LittlerootTown_EventScript_1E7E5C:: @ 81E7E5C
 	return
 
 LittlerootTown_EventScript_1E7E67:: @ 81E7E67
-	setobjectxyperm 4, 14, 8
+	@setobjectxyperm 4, 14, 8
 	return
 
 LittlerootTown_EventScript_1E7E6F:: @ 81E7E6F
 	compare VAR_0x4050, 0
 	goto_if_eq LittlerootTown_EventScript_1E7E86
-	setobjectxyperm 1, 10, 1
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	@setobjectxyperm 1, 10, 1
+	@setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_EventScript_1E7E86:: @ 81E7E86
-	setobjectxyperm 1, 15, 11
-	setobjectmovementtype 1, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
+	@setobjectxyperm 1, 15, 11
+	@setobjectmovementtype 1, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
 	return
 
 LittlerootTown_EventScript_1E7E92:: @ 81E7E92
@@ -75,11 +75,11 @@ LittlerootTown_EventScript_1E7E92:: @ 81E7E92
 	return
 
 LittlerootTown_EventScript_1E7EB1:: @ 81E7EB1
-	setobjectxyperm 4, 5, 9
+	@setobjectxyperm 4, 5, 9
 	return
 
 LittlerootTown_EventScript_1E7EB9:: @ 81E7EB9
-	setobjectxyperm 4, 14, 9
+	@setobjectxyperm 4, 14, 9
 	return
 
 LittlerootTown_MapScript2_1E7EC1: @ 81E7EC1
@@ -417,14 +417,14 @@ LittlerootTown_EventScript_1E81B2:: @ 81E81B2
 LittlerootTown_EventScript_1E81BB:: @ 81E81BB
 	lockall
 	setvar VAR_0x8008, 0
-	setobjectxy 4, 10, 9
+	@setobjectxy 4, 10, 9
 	goto LittlerootTown_EventScript_1E8211
 	end
 
 LittlerootTown_EventScript_1E81CE:: @ 81E81CE
 	lockall
 	setvar VAR_0x8008, 1
-	setobjectxy 4, 11, 9
+	@setobjectxy 4, 11, 9
 	goto LittlerootTown_EventScript_1E8211
 	end
 
@@ -1080,116 +1080,190 @@ CanvasTown_Sign_Directions_0::
 _CanvasTown_Sign_Directions_0_Subscript_Text_0:
   .string "{UP_ARROW} {COLOR GREEN}Canvas Trail$"
 
+CanvasTown_Trigger_NoExitYet::
+	compare VAR_CANVASTOWN_RIVAL_ENCOUNTER, 0
+	goto_if_eq CanvasTown_Trigger_NoExitYet_1
+	return
+
+CanvasTown_Trigger_NoExitYet_1:
+	lockall
+	applymovement 2, _CanvasTown_Trigger_NoExitYet_Sub_Movement_0
+	waitmovement 0
+	playse SE_PIN
+	applymovement EVENT_OBJ_ID_PLAYER, _CanvasTown_Trigger_NoExitYet_Sub_Movement_2
+	waitmovement 0
+	delay 10
+	msgbox CanvasTown_Trigger_NoExitYet_Text_0
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, _CanvasTown_Trigger_NoExitYet_Sub_Movement_1
+	waitmovement 0
+	releaseall
+	end
+
+
+_CanvasTown_Trigger_NoExitYet_Sub_Movement_0:
+	walk_in_place_right
+	emote_exclamation_mark
+	step_end
+
+_CanvasTown_Trigger_NoExitYet_Sub_Movement_1:
+	walk_down
+	step_end
+
+_CanvasTown_Trigger_NoExitYet_Sub_Movement_2:
+	walk_in_place_left
+	step_end
+
 CanvasTown_Trigger_RivalEncounter::
-  lockall
-  compare VAR_UNUSED_0x404E, 0
-  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6
-  
-  releaseall
-  end
+	compare VAR_CANVASTOWN_RIVAL_ENCOUNTER, 0
+	goto_if_eq CanvasTown_Trigger_RivalEncounter_2
+	releaseall
+	end
 
-CanvasTown_Trigger_RivalEncounter_Left::
-  lockall
-  setobjectxy 3, 15, 3
-  compare VAR_UNUSED_0x404E, 0
-  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6
-  
-  releaseall
-  end
+CanvasTown_Trigger_RivalEncounter_2:
+	lockall
+	opendoor 7, 5
+	waitdooranim
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 8
+	goto_if_eq CanvasTown_Trigger_RivalEncounter_5
+	compare VAR_TEMP_1, 9
+	goto_if_eq CanvasTown_Trigger_RivalEncounter_6
+	compare VAR_TEMP_1, 10
+	goto_if_eq CanvasTown_Trigger_RivalEncounter_7
+CanvasTown_Trigger_RivalEncounter_4:
+	playse SE_PIN
+	msgbox CanvasTown_Trigger_RivalEncounter_Text_0
+	closemessage
+	delay 20
+	applymovement 4, _CanvasTown_Movement_1
+	waitmovement 0
+	delay 20
+	msgbox CanvasTown_Trigger_RivalEncounter_Text_1
+	closemessage
+	compare VAR_TEMP_1, 8
+	goto_if_eq CanvasTown_Trigger_RivalEncounter_12
+	applymovement EVENT_OBJ_ID_PLAYER, _CanvasTown_Player_Movement_0_0
+	waitmovement 0
+CanvasTown_Trigger_RivalEncounter_11:
+	applymovement 4, _CanvasTown_Movement_2
+	waitmovement 0
+	setflag FLAG_CANVASTOWN_RIVAL
+	removeobject 4
+	setvar VAR_CANVASTOWN_RIVAL_ENCOUNTER, 1
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	releaseall
+	end
 
-CanvasTown_Trigger_RivalEncounter_Right::
-  lockall
-  setobjectxy 3, 17, 3
-  compare VAR_UNUSED_0x404E, 0
-  goto_if_eq _CanvasTown_Trigger_RivalEncounter_Subscript_Code_6
-  
-  releaseall
-  end
+CanvasTown_Trigger_RivalEncounter_5:
+	applymovement 4, _CanvasTown_Movement_0_0
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalEncounter_4
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Text_0:
-  .string "???:{COLOR BLUE} Whoa whoa {PLAYER}!\n"
-  .string "Not so fast!$"
+CanvasTown_Trigger_RivalEncounter_6:
+	applymovement 4, _CanvasTown_Movement_0_1
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalEncounter_4
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Movement_1:
-  walk_down
-  walk_down
-  walk_down
-  walk_down
-  walk_down
-  step_end
+CanvasTown_Trigger_RivalEncounter_7:
+	applymovement 4, _CanvasTown_Movement_0_2
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalEncounter_4
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Text_2:
-  .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Where do you think\n"
-  .string "you're going?\p"
-  .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} ...$"
+CanvasTown_Trigger_RivalEncounter_12:
+	applymovement EVENT_OBJ_ID_PLAYER, _CanvasTown_Player_Movement_0_1
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalEncounter_11
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Movement_3:
-  emote_exclamation_mark
-  step_end
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Text_4:
-  .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} What?\p"
-  .string "You're getting your first Pokémon\n"
-  .string "from {COLOR GREEN}Professor Cypress{COLOR BLUE} too?\p"
-  .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Well...\n"
-  .string "I already got mine! Yeah!\l"
-  .string "And I'm not gonna tell you which\l"
-  .string "one I chose because you could counter me!\p"
-  .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} No way!\p"
-  .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} Well, I'm gonna get ahead\n"
-  .string "while I still can!\p"
-  .string "{COLOR DARK_GREY}Kyler:{COLOR BLUE} I'm gonna be the best trainer\n"
-  .string "the Ryoko Region has ever seen!$"
+_CanvasTown_Movement_0_0:
+	walk_down
+	walk_down
+	walk_in_place_right
+	emote_exclamation_mark
+	step_end
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Movement_5:
-  walk_up
-  walk_up
-  walk_up
-  walk_up
-  walk_up
-  step_end
+_CanvasTown_Movement_0_1:
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_right
+	emote_exclamation_mark
+	step_end
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Code_6::
-  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_0, MSGBOX_DEFAULT
-  closemessage
-  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_1
-  waitmovement 3
-  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_2, MSGBOX_DEFAULT
-  closemessage
-  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_3
-  waitmovement 3
-  delay 20
-  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_4, MSGBOX_DEFAULT
-  closemessage
-  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_5
-  waitmovement 3
-  clearflag FLAG_HIDE_MAP_NAME_POPUP
-  setflag FLAG_UNUSED_0x493
-  setvar VAR_UNUSED_0x404E, 1
-  removeobject 3
-  releaseall
-  end
-_CanvasTown_Trigger_RivalEncounter_Subscript_Movement_6:
-  set_invisible
-  step_end
+_CanvasTown_Movement_0_2:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_right
+	emote_exclamation_mark
+	step_end
 
-_CanvasTown_Trigger_RivalEncounter_Subscript_Code_7::
-  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_0, MSGBOX_DEFAULT
-  closemessage
-  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_1
-  waitmovement 3
-  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_2, MSGBOX_DEFAULT
-  closemessage
-  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_3
-  waitmovement 3
-  delay 20
-  msgbox _CanvasTown_Trigger_RivalEncounter_Subscript_Text_4, MSGBOX_DEFAULT
-  closemessage
-  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_5
-  waitmovement 3
-  setflag FLAG_UNUSED_0x493
-  clearflag FLAG_HIDE_MAP_NAME_POPUP
-  setvar VAR_UNUSED_0x404E, 1
-  applymovement 3, _CanvasTown_Trigger_RivalEncounter_Subscript_Movement_6
-  releaseall
-  end
+_CanvasTown_Movement_1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+_CanvasTown_Movement_1_0:
+	set_visible
+	step_end
+
+_CanvasTown_Movement_2:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+_CanvasTown_Player_Movement_0_0:
+	walk_up
+	walk_in_place_down
+	step_end
+
+_CanvasTown_Player_Movement_0_1:
+	walk_down
+	walk_in_place_up
+	step_end
+
+CanvasTown_Object_Youngster::
+	msgbox CanvasTown_Object_Youngster_Text_0, MSGBOX_NPC
+	end
+
+
+CanvasTown_Trigger_NoExitYet_Text_0:
+	.string "{COLOR RED}Hey!\p"
+	.string "{COLOR GREEN}Ryder{COLOR RED} was looking for your earlier...\p"
+	.string "You should probably go check up on him.$"
+
+CanvasTown_Trigger_RivalEncounter_Text_0:
+	.string "Ryder:{COLOR BLUE} There you are {PLAYER}!$"
+
+CanvasTown_Trigger_RivalEncounter_Text_1:
+	.string "Ryder:{COLOR BLUE} You were late to getting your\n"
+	.string "first Pokémon from {COLOR GREEN}Professor Cypress{COLOR BLUE}!\p"
+	.string "{COLOR DARK_GREY}Ryder:{COLOR BLUE} She should still have a Pokémon\n"
+	.string "or two left over from earlier, but the\l"
+	.string "early bird gets the worm!\p"
+	.string "{COLOR DARK_GREY}Ryder:{COLOR BLUE} Anyways, I was just grabbing\n"
+	.string "some last minute things before I start\l"
+	.string "the Ryoko League Challenge!\p"
+	.string "{COLOR DARK_GREY}Ryder:{COLOR BLUE} I'll catch up with you later\n"
+	.string "{PLAYER}!$"
+
+CanvasTown_Object_Youngster_Text_0:
+	.string "{COLOR BLUE}You're so lucky that you get to begin\n"
+	.string "the Ryoko League Challenge!\p"
+	.string "I can't do it until next year, I'm not old\n"
+	.string "enough yet.$"

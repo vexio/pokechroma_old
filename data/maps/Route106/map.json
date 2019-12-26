@@ -37,13 +37,7 @@
             "y": 13
         }
     ],
-    "connections": [
-        {
-            "direction": "up",
-            "map": "MAP_ROUTE105",
-            "offset": 0
-        }
-    ],
+    "connections": null,
     "coord_events": [
     ],
     "id": "MAP_ROUTE106",

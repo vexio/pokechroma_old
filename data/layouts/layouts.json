@@ -93,7 +93,7 @@
         {
             "blockdata_filepath": "data/layouts/LittlerootTown/map.bin",
             "border_filepath": "data/layouts/LittlerootTown/border.bin",
-            "height": 22,
+            "height": 24,
             "id": "LAYOUT_LITTLEROOT_TOWN",
             "name": "LittlerootTown_Layout",
             "primary_tileset": "gTileset_General",
@@ -123,12 +123,12 @@
         {
             "blockdata_filepath": "data/layouts/LavaridgeTown/map.bin",
             "border_filepath": "data/layouts/LavaridgeTown/border.bin",
-            "height": 20,
+            "height": 40,
             "id": "LAYOUT_LAVARIDGE_TOWN",
             "name": "LavaridgeTown_Layout",
             "primary_tileset": "gTileset_General",
-            "secondary_tileset": "gTileset_Lavaridge",
-            "width": 20
+            "secondary_tileset": "gTileset_Pineridge",
+            "width": 48
         },
         {
             "blockdata_filepath": "data/layouts/FallarborTown/map.bin",
@@ -197,8 +197,8 @@
             "id": "LAYOUT_ROUTE104",
             "name": "Route104_Layout",
             "primary_tileset": "gTileset_General",
-            "secondary_tileset": "gTileset_Dewford",
-            "width": 42
+            "secondary_tileset": "gTileset_Pineridge",
+            "width": 38
         },
         {
             "blockdata_filepath": "data/layouts/Route105/map.bin",
@@ -533,7 +533,7 @@
         {
             "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin",
             "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
-            "height": 11,
+            "height": 12,
             "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
             "name": "LittlerootTown_BrendansHouse_1F_Layout",
             "primary_tileset": "gTileset_Building",
@@ -553,7 +553,7 @@
         {
             "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/map.bin",
             "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
-            "height": 11,
+            "height": 12,
             "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
             "name": "LittlerootTown_MaysHouse_1F_Layout",
             "primary_tileset": "gTileset_Building",
@@ -573,7 +573,7 @@
         {
             "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/map.bin",
             "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/border.bin",
-            "height": 15,
+            "height": 16,
             "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
             "name": "LittlerootTown_ProfessorBirchsLab_Layout",
             "primary_tileset": "gTileset_Building",
@@ -593,7 +593,7 @@
         {
             "blockdata_filepath": "data/layouts/House2/map.bin",
             "border_filepath": "data/layouts/House2/border.bin",
-            "height": 8,
+            "height": 10,
             "id": "LAYOUT_HOUSE2",
             "name": "House2_Layout",
             "primary_tileset": "gTileset_Building",
@@ -633,12 +633,12 @@
         {
             "blockdata_filepath": "data/layouts/House3/map.bin",
             "border_filepath": "data/layouts/House3/border.bin",
-            "height": 8,
+            "height": 10,
             "id": "LAYOUT_HOUSE3",
             "name": "House3_Layout",
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_GenericBuilding",
-            "width": 10
+            "width": 11
         },
         {
             "blockdata_filepath": "data/layouts/DewfordTown_Gym/map.bin",
@@ -663,12 +663,12 @@
         {
             "blockdata_filepath": "data/layouts/House4/map.bin",
             "border_filepath": "data/layouts/House4/border.bin",
-            "height": 9,
+            "height": 10,
             "id": "LAYOUT_HOUSE4",
             "name": "House4_Layout",
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_GenericBuilding",
-            "width": 10
+            "width": 11
         },
         {
             "blockdata_filepath": "data/layouts/LavaridgeTown_HerbShop/map.bin",
@@ -1283,12 +1283,12 @@
         {
             "blockdata_filepath": "data/layouts/RusturfTunnel/map.bin",
             "border_filepath": "data/layouts/RusturfTunnel/border.bin",
-            "height": 36,
+            "height": 50,
             "id": "LAYOUT_RUSTURF_TUNNEL",
             "name": "RusturfTunnel_Layout",
             "primary_tileset": "gTileset_General",
             "secondary_tileset": "gTileset_RusturfTunnel",
-            "width": 38
+            "width": 82
         },
         {
             "blockdata_filepath": "data/layouts/Underwater_SootopolisCity/map.bin",
@@ -4409,6 +4409,16 @@
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_MysteryEventsHouse",
             "width": 11
+        },
+        {
+            "blockdata_filepath": "data/layouts/SinnohRoute_205/map.bin",
+            "border_filepath": "data/layouts/SinnohRoute_205/border.bin",
+            "height": 80,
+            "id": "LAYOUT_SINNOH_ROUTE_205",
+            "name": "SinnohRoute_205_Layout",
+            "primary_tileset": "gTileset_General",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 36
         }
     ],
     "layouts_table_label": "gMapLayouts"

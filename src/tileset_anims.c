@@ -77,6 +77,27 @@ static void QueueAnimTiles_EliteFour_WallLights(u16);
 static void QueueAnimTiles_General_Spikey_Grass(u16);
 static void QueueAnimTiles_General_Red_Flower(u16);
 static void QueueAnimTiles_General_Blue_Flower(u16);
+static void QueueAnimTiles_General_Lilypad(u16);
+
+const u16 gTilesetAnims_General_Lilypad_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_0.4bpp");
+const u16 gTilesetAnims_General_Lilypad_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_1.4bpp");
+const u16 gTilesetAnims_General_Lilypad_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_2.4bpp");
+const u16 gTilesetAnims_General_Lilypad_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_3.4bpp");
+const u16 gTilesetAnims_General_Lilypad_Frame4[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_4.4bpp");
+const u16 gTilesetAnims_General_Lilypad_Frame5[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_5.4bpp");
+const u16 gTilesetAnims_General_Lilypad_Frame6[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_6.4bpp");
+const u16 gTilesetAnims_General_Lilypad_Frame7[] = INCBIN_U16("data/tilesets/primary/general/anim/lilypad/lilypad_anim_7.4bpp");
+
+const u16 *const gTilesetAnims_General_Lilypad[] = {
+    gTilesetAnims_General_Lilypad_Frame0,
+    gTilesetAnims_General_Lilypad_Frame1,
+    gTilesetAnims_General_Lilypad_Frame2,
+    gTilesetAnims_General_Lilypad_Frame3,
+    gTilesetAnims_General_Lilypad_Frame4,
+    gTilesetAnims_General_Lilypad_Frame5,
+    gTilesetAnims_General_Lilypad_Frame6,
+    gTilesetAnims_General_Lilypad_Frame7,
+};
 
 const u16 gTilesetAnims_General_Red_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/red_flower/red_flower_anim_0.4bpp");
 const u16 gTilesetAnims_General_Red_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/red_flower/red_flower_anim_1.4bpp");
@@ -717,14 +738,16 @@ static void TilesetAnim_General(u16 timer)
         QueueAnimTiles_General_Waterfall(timer >> 4);
     if (timer % 16 == 4)
         QueueAnimTiles_General_LandWaterEdge(timer >> 4);
-    if (timer % 16 == 5)
+    if (timer % 16 == 6)
         QueueAnimTiles_General_Spikey_Grass(timer >> 4);
     if (timer % 16 == 6)
         QueueAnimTiles_General_Red_Flower(timer >> 4);
-    if (timer % 16 == 7)
+    if (timer % 16 == 6)
         QueueAnimTiles_General_Blue_Flower(timer >> 4);
     if (timer % 16 == 1)
         QueueAnimTiles_General_Dark_Water(timer >> 4);
+    if (timer % 16 == 9)
+        QueueAnimTiles_General_Lilypad(timer >> 4);
 }
 
 static void TilesetAnim_Building(u16 timer)
@@ -737,6 +760,12 @@ static void QueueAnimTiles_General_Spikey_Grass(u16 timer)
 {
     u16 i = timer % 4;
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Spikey_Grass[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 0x20);
+}
+
+static void QueueAnimTiles_General_Lilypad(u16 timer)
+{
+    u16 i = timer % 8;
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Lilypad[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(358)), 0x80);
 }
 
 static void QueueAnimTiles_General_Red_Flower(u16 timer)

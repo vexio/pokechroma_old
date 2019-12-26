@@ -24,8 +24,8 @@
             "script": "LittlerootTown_MaysHouse_1F_EventScript_1F89F3",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 9,
-            "y": 5
+            "x": 2,
+            "y": 3
         },
         {
             "elevation": 3,
@@ -37,7 +37,7 @@
             "script": "LittlerootTown_MaysHouse_1F_EventScript_1F8A3D",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 6,
+            "x": 5,
             "y": 7
         }
     ],
@@ -50,13 +50,13 @@
             "dest_warp_id": 0,
             "elevation": 0,
             "x": 9,
-            "y": 9
+            "y": 10
         },
         {
             "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
             "dest_warp_id": 0,
             "elevation": 0,
-            "x": 4,
+            "x": 6,
             "y": 3
         }
     ],
