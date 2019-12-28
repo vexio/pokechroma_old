@@ -11,6 +11,7 @@ If you're wanting to test out the game yourself, you can build this repo by down
 All assets under `custom assets` directory are custom assets from either myself (vexio/vxo), Spherical Ice, or the Acanthite Team.
 
 [Twitter](https://twitter.com/vexioVEVO)
+[PokéCommunity Thread](https://www.pokecommunity.com/showthread.php?t=420448)
 
 [travis]: https://travis-ci.org/pret/pokeemerald
 [travis-badge]: https://travis-ci.org/pret/pokeemerald.svg?branch=master
