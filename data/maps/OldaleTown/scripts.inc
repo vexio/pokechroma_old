@@ -15,13 +15,13 @@ OldaleTown_EventScript_1E8ECC:: @ 81E8ECC
 	return
 
 OldaleTown_EventScript_1E8ED2:: @ 81E8ED2
-	setobjectxyperm 3, 1, 11
-	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
+	//setobjectxyperm 3, 1, 11
+	//setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 OldaleTown_EventScript_1E8EDE:: @ 81E8EDE
-	setobjectxyperm 2, 13, 14
-	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
+	//setobjectxyperm 2, 13, 14
+	//setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 OldaleTown_EventScript_1E8EEA:: @ 81E8EEA
@@ -405,85 +405,213 @@ AlnerwickCity_Sign_TownSign::
 	return
 
 
-AlnerwickCity_Robbery_Event::
-	compare VAR_ALNERWICKCITY_ROBBERY, 0
-	goto_if_eq AlnerwickCity_Robbery_Event_1
+AlnerwickCity_RivalBattle::
+	compare VAR_ALNERWICKCITY_RIVALBATTLE, 0
+	goto_if_eq AlnerwickCity_RivalBattle_1
 	return
 
-AlnerwickCity_Robbery_Event_1:
-	lockall
-	msgbox AlnerwickCity_Robbery_Event_Text_0
+AlnerwickCity_RivalBattle_1:
+	lock
+	applymovement 5, AlnerwickCity_RivalBattle_Movement_0
+	waitmovement 0
+	msgbox AlnerwickCity_RivalBattle_Text_0
+	closemessage
 	delay 10
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 9
+	goto_if_eq AlnerwickCity_RivalBattle_4
+	compare VAR_TEMP_0, 10
+	goto_if_eq AlnerwickCity_RivalBattle_5
+	compare VAR_TEMP_0, 11
+	goto_if_eq AlnerwickCity_RivalBattle_6
+AlnerwickCity_RivalBattle_3:
+	msgbox AlnerwickCity_RivalBattle_Text_1
+	compare VAR_STARTER_MON, 0
+	goto_if_eq AlnerwickCity_RivalBattle_11
+	compare VAR_STARTER_MON, 1
+	goto_if_eq AlnerwickCity_RivalBattle_12
+	compare VAR_STARTER_MON, 2
+	goto_if_eq AlnerwickCity_RivalBattle_13
+AlnerwickCity_RivalBattle_10:
+	msgbox AlnerwickCity_RivalBattle_Text_3
 	closemessage
-	applymovement 6, AlnerwickCity_Robbery_Movement_0
+	applymovement 5, AlnerwickCity_RivalBattle_Movement_2
 	waitmovement 0
-	msgbox AlnerwickCity_Robbery_Event_Text_1
-	closemessage
-	applymovement 5, AlnerwickCity_Robbery_Movement_1
+	setvar VAR_ALNERWICKCITY_RIVALBATTLE, 1
+	setflag FLAG_ALNERWICKCITY_RIVALBATTLE
+	removeobject 5
+	releaseall
+	end
+
+AlnerwickCity_RivalBattle_4:
+	applymovement 5, AlnerwickCity_RivalBattle_Movement_1_0
 	waitmovement 0
-	msgbox AlnerwickCity_Robbery_Event_Text_2
-	closemessage
-	applymovement 6, AlnerwickCity_Robbery_Movement_2
+	applymovement EVENT_OBJ_ID_PLAYER, AlnerwickCity_RivalBattle_Movement_3
 	waitmovement 0
-	msgbox AlnerwickCity_Robbery_Event_Text_3
-	closemessage
-	applymovement 6, AlnerwickCity_Robbery_Movement_3
-	msgbox AlnerwickCity_Robbery_Event_Text_4
-	closemessage
-	applymovement 5, AlnerwickCity_Robbery_Movement_3
+	goto AlnerwickCity_RivalBattle_3
+
+AlnerwickCity_RivalBattle_5:
+	applymovement 5, AlnerwickCity_RivalBattle_Movement_1_1
 	waitmovement 0
-	msgbox AlnerwickCity_Robbery_Event_Text_5
-	return
+	goto AlnerwickCity_RivalBattle_3
+
+AlnerwickCity_RivalBattle_6:
+	applymovement 5, AlnerwickCity_RivalBattle_Movement_1_2
+	waitmovement 0
+	applymovement EVENT_OBJ_ID_PLAYER, AlnerwickCity_RivalBattle_Movement_4
+	waitmovement 0
+	goto AlnerwickCity_RivalBattle_3
+
+AlnerwickCity_RivalBattle_11:
+	trainerbattle_no_intro TRAINER_ALNERWICKCITY_RIVAL_0, AlnerwickCity_RivalBattle_Text_2
+	goto AlnerwickCity_RivalBattle_10
+
+AlnerwickCity_RivalBattle_12:
+	trainerbattle_no_intro TRAINER_ALNERWICKCITY_RIVAL_1, AlnerwickCity_RivalBattle_Text_2
+	goto AlnerwickCity_RivalBattle_10
+
+AlnerwickCity_RivalBattle_13:
+	trainerbattle_no_intro TRAINER_ALNERWICKCITY_RIVAL_2, AlnerwickCity_RivalBattle_Text_2
+	goto AlnerwickCity_RivalBattle_10
 
 
-AlnerwickCity_Robbery_Movement_0:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	step_end
-
-AlnerwickCity_Robbery_Movement_1:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-AlnerwickCity_Robbery_Movement_2:
-	walk_in_place_up
-	step_end
-
-AlnerwickCity_Robbery_Movement_3:
+AlnerwickCity_RivalBattle_Movement_0:
 	walk_in_place_down
+	step_end
+
+AlnerwickCity_RivalBattle_Movement_1_0:
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_left
+	step_end
+
+AlnerwickCity_RivalBattle_Movement_1_1:
+	walk_down
+	walk_down
+	step_end
+
+AlnerwickCity_RivalBattle_Movement_1_2:
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_right
+	step_end
+
+AlnerwickCity_RivalBattle_Movement_2:
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+AlnerwickCity_RivalBattle_Movement_3:
+	walk_in_place_right
+	step_end
+
+AlnerwickCity_RivalBattle_Movement_4:
+	walk_in_place_left
+	step_end
+
+AlnerwickCity_Object_Girl::
+	msgbox AlnerwickCity_Object_Girl_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Object_CreepyDude::
+	lock
+	faceplayer
+	msgbox AlnerwickCity_Object_CreepyDude_Text_0, MSGBOX_AUTOCLOSE
+	applymovement 3, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	end
+
+
+AlnerwickCity_Object_Youngster::
+	msgbox AlnerwickCity_Object_Youngster_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Object_Mart_Employee::
+	msgbox AlnerwickCity_Object_Mart_Employee_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Event_MartEmployee::
+	lock
+	applymovement 2, Common_Movement_FacePlayer
+	waitmovement 0
+	delay 10
+	msgbox AlnerwickCity_Event_MartEmployee_Text_0, MSGBOX_AUTOCLOSE
+	applymovement EVENT_OBJ_ID_PLAYER, AlnerwickCity_Event_MartEmployee_Movement_0
+	waitmovement 0
+	release
+	end
+
+
+AlnerwickCity_Event_MartEmployee_Movement_0:
+	walk_left
 	step_end
 
 AlnerwickCity_Sign_TownSign_Text_0:
 	.string "{COLOR RED}Alnerwick City\n"
 	.string "{COLOR DARK_GREY}Quiet Riverside$"
 
-AlnerwickCity_Robbery_Event_Text_0:
-	.string "???: {COLOR RED}Help!$"
+AlnerwickCity_RivalBattle_Text_0:
+	.string "Ryder: {COLOR BLUE}What's up slowpoke!$"
 
-AlnerwickCity_Robbery_Event_Text_1:
-	.string "Old Lady: {COLOR RED}This smug man is trying to\n"
-	.string "steal my beloved literature!$"
+AlnerwickCity_RivalBattle_Text_1:
+	.string "Ryder: {COLOR BLUE}Now that you've finally caught\n"
+	.string "up with me, I can test your skills!\p"
+	.string "{COLOR DARK_GREY}Ryder:{COLOR BLUE} Let's see how you go against me,\n"
+	.string "Ryder! The upcoming Ryoko Champion!$"
 
-AlnerwickCity_Robbery_Event_Text_2:
-	.string "Grunt: {COLOR BLUE}Don't make me use my Koffing ye'\n"
-	.string "old slag!$"
+AlnerwickCity_RivalBattle_Text_2:
+	.string "Looks like I chose the wrong starter...\p"
+	.string "This is just a minor setback.$"
 
-AlnerwickCity_Robbery_Event_Text_3:
-	.string "Old Lady: {COLOR RED}You don't deserve what this\n"
-	.string "book pertains!$"
+AlnerwickCity_RivalBattle_Text_3:
+	.string "Ryder: {COLOR BLUE}Don't get too confident in your\n"
+	.string "abilities.\p"
+	.string "{COLOR DARK_GREY}Ryder: {COLOR BLUE}Anyways, I saw some thugs in the\n"
+	.string "Library. Don't make this victory go to\l"
+	.string "waste.$"
 
-AlnerwickCity_Robbery_Event_Text_4:
-	.string "Old Lady: {COLOR RED}Trainer, please get this man\n"
-	.string "away from me!$"
+AlnerwickCity_Object_Girl_Text_0:
+	.string "{COLOR RED}I just recently started on my Pokémon\n"
+	.string "journey, but it's a lot of work! I'm just\l"
+	.string "taking a little break here.$"
 
-AlnerwickCity_Robbery_Event_Text_5:
-	.string "Grunt: {COLOR BLUE}Who do you think you are, kid?$"
+AlnerwickCity_Object_CreepyDude_Text_0:
+	.string "{COLOR BLUE}Isn't it strange that there are people\n"
+	.string "in this building, but there is no\l"
+	.string "obvious entrance?$"
+
+AlnerwickCity_Object_Youngster_Text_0:
+	.string "{COLOR BLUE}I wanted to participate in the Ryoko\n"
+	.string "League this year, but I signed up too\l"
+	.string "late.$"
+
+AlnerwickCity_Object_Mart_Employee_Text_0:
+	.string "{COLOR BLUE}Hello there!\p"
+	.string "I bet you're wondering where this city's\n"
+	.string "Poké Mart is at.\p"
+	.string "Well, Pokémon Centers now also include\n"
+	.string "Poké Marts! So I'm now out of a job...$"
+
+AlnerwickCity_Event_MartEmployee_Text_0:
+	.string "{COLOR BLUE}Hello there!\p"
+	.string "I'm sure you're looking for this city's\n"
+	.string "Poké Mart.\l"
+	.string "Well, as of last week, Poké Marts are now\l"
+	.string "a part of Pokémon Centers.\p"
+	.string "Just talk to my friend on the left side\n"
+	.string "of the Pokémon Center to start buying!$"

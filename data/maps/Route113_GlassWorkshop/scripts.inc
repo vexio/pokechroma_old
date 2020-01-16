@@ -374,7 +374,7 @@ Route113_GlassWorkshop_Text_26F688: @ 826F688
 
 Route113_GlassWorkshop_Text_26F6B7: @ 826F6B7
 	.string "Oh?\n"
-	.string "You've no room in your BAG, huff-puff.\p"
+	.string "You've no room in your Bag, huff-puff.\p"
 	.string "I'll hold on to it, so come back later,\n"
 	.string "huff-puff.$"
 

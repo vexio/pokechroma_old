@@ -2058,7 +2058,7 @@ gTVWhatsNo1InHoennTodayText05:: @ 08288355
 gTVWhatsNo1InHoennTodayText06:: @ 0828842B
 	.string "In just one day, {STR_VAR_1} picked\n"
 	.string "{STR_VAR_2} BERRIES!\p"
-	.string "{STR_VAR_1}'s BAG became so filled\n"
+	.string "{STR_VAR_1}'s Bag became so filled\n"
 	.string "with BERRIES, the TRAINER had trouble\l"
 	.string "walking afterward!$"
 
@@ -2190,7 +2190,7 @@ gTVSecretBaseSecretsText18:: @ 08288C88
 gTVSecretBaseSecretsText19:: @ 08288CC8
 	.string "…Oh?\p"
 	.string "The visitor is reaching for their own\n"
-	.string "BAG and rummaging about in it!\p"
+	.string "Bag and rummaging about in it!\p"
 	.string "The visitor pulled out\n"
 	.string "one {STR_VAR_2}!\p"
 	.string "Look at the visitor smile while\n"

@@ -1809,3 +1809,23 @@ gTilesetPalettes_Pineridge::
 	.align 2
 gTilesetTiles_Pineridge::
 	.incbin "data/tilesets/secondary/pineridge/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Library::
+	.incbin "data/tilesets/secondary/library/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Library::
+	.incbin "data/tilesets/secondary/library/tiles.4bpp.lz"

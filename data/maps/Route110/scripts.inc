@@ -971,7 +971,7 @@ Route110_Text_1F090D: @ 81F090D
 
 Route110_Text_1F0992: @ 81F0992
 	.string "TRAINER TIPS\p"
-	.string "The items in the BAG can be reorganized\n"
+	.string "The items in the Bag can be reorganized\n"
 	.string "by pressing SELECT.$"
 
 Route110_Text_1F09DB: @ 81F09DB

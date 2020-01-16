@@ -447,6 +447,8 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define EVENT_OBJ_PAL_CAMPER_PICNICKER 0x1132
 #define EVENT_OBJ_PAL_BLACK_BELT 0x1133
 #define EVENT_OBJ_PAL_HERO 0x1134
+#define EVENT_OBJ_PAL_MART_EMPLOYEE 0x1135
+#define EVENT_OBJ_PAL_GIRL_2 0x1136
 #define EVENT_OBJ_PAL_TAG_NONE 0x11FF
 
 #include "data/field_event_obj/event_object_graphics_info_pointers.h"
@@ -509,6 +511,8 @@ const struct SpritePalette sEventObjectSpritePalettes[] = {
     {gEventObjectPalette_Hiker, EVENT_OBJ_PAL_HIKER},
     {gEventObjectPalette_Camper_Picnicker, EVENT_OBJ_PAL_CAMPER_PICNICKER},
     {gEventObjectPalette_BlackBelt, EVENT_OBJ_PAL_BLACK_BELT},
+    {gEventObjectPalette_MartEmployee, EVENT_OBJ_PAL_MART_EMPLOYEE},
+    {gEventObjectPalette_Girl2, EVENT_OBJ_PAL_GIRL_2},
     {gEventObjectPalette_Hero, EVENT_OBJ_PAL_HERO},
     {NULL, 0x0000},
 };

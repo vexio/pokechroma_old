@@ -2,7 +2,7 @@ SeafloorCavern_Room4_MapScripts:: @ 8234C9B
 	.byte 0
 
 SeafloorCavern_Room4_EventScript_234C9C:: @ 8234C9C
-	trainerbattle_single TRAINER_GRUNT_7, SeafloorCavern_Room4_Text_234CCA, SeafloorCavern_Room4_Text_234CF3
+	trainerbattle_single TRAINER_ALNERWICKPASS_FISHERMAN, SeafloorCavern_Room4_Text_234CCA, SeafloorCavern_Room4_Text_234CF3
 	msgbox SeafloorCavern_Room4_Text_234CFC, MSGBOX_AUTOCLOSE
 	end
 

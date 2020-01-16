@@ -16,13 +16,13 @@ OldaleTown_EventScript_1E8ECC:: @ 81E8ECC
 	return
 
 OldaleTown_EventScript_1E8ED2:: @ 81E8ED2
-	setobjectxyperm 3, 1, 11
-	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
+	//setobjectxyperm 3, 1, 11
+	//setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 OldaleTown_EventScript_1E8EDE:: @ 81E8EDE
-	setobjectxyperm 2, 13, 14
-	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
+	//setobjectxyperm 2, 13, 14
+	//setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 OldaleTown_EventScript_1E8EEA:: @ 81E8EEA
@@ -406,45 +406,113 @@ OldaleTown_Text_1E94DA: @ 81E94DA
 script AlnerwickCity_Sign_TownSign {
     msgbox(format("{COLOR RED}Alnerwick City\n{COLOR DARK_GREY}Quiet Riverside"), MSGBOX_SIGN)
 }
-const OLD_LADY = 6
-const GRUNT = 5
+const RIVAL = 5
 
-// AlnerwickRobbery Event
-script AlnerwickCity_Robbery_Event {
-	if (var(VAR_ALNERWICKCITY_ROBBERY) == 0) {
-		lockall
-		msgbox(format("???: {COLOR RED}Help!"))
+// AlnerwickCity Rival Battle
+script AlnerwickCity_RivalBattle {
+	if(!var(VAR_ALNERWICKCITY_RIVALBATTLE)) {
+		lock
+		applymovement(RIVAL, AlnerwickCity_RivalBattle_Movement_0)
+		waitmovement(0)
+		msgbox(format("Ryder: {COLOR BLUE}What's up slowpoke!"))
+		closemessage
 		delay(10)
+		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+		if (var(VAR_TEMP_0) == 9) {
+			applymovement(RIVAL, AlnerwickCity_RivalBattle_Movement_1_0)
+			waitmovement(0)
+			applymovement(EVENT_OBJ_ID_PLAYER, AlnerwickCity_RivalBattle_Movement_3)
+			waitmovement(0)
+		} elif (var(VAR_TEMP_0) == 10) {
+			applymovement(RIVAL, AlnerwickCity_RivalBattle_Movement_1_1)
+			waitmovement(0)
+		} elif (var(VAR_TEMP_0) == 11) {
+			applymovement(RIVAL, AlnerwickCity_RivalBattle_Movement_1_2)
+			waitmovement(0)
+			applymovement(EVENT_OBJ_ID_PLAYER, AlnerwickCity_RivalBattle_Movement_4)
+			waitmovement(0)
+		}
+		msgbox(format("Ryder: {COLOR BLUE}Now that you've finally caught up with me, I can test your skills!\p{COLOR DARK_GREY}Ryder:{COLOR BLUE} Let's see how you go against me, Ryder! The upcoming Ryoko Champion!"))
+		// Player's Starter is Chikorita (Rival has Cyndaquil)
+		if (var(VAR_STARTER_MON) == 0) { 
+			trainerbattle_no_intro(TRAINER_ALNERWICKCITY_RIVAL_0, format("Looks like I chose the wrong starter...\pThis is just a minor setback."))
+		// Player's Starter is Cyndaquil (Rival has Totodile)
+		} elif (var(VAR_STARTER_MON) == 1) {
+			trainerbattle_no_intro(TRAINER_ALNERWICKCITY_RIVAL_1, format("Looks like I chose the wrong starter...\pThis is just a minor setback."))
+		// Player's Starter is Totodile (Rival has Chikorita)
+		} elif (var(VAR_STARTER_MON) == 2) {
+			trainerbattle_no_intro(TRAINER_ALNERWICKCITY_RIVAL_2, format("Looks like I chose the wrong starter...\pThis is just a minor setback."))
+		}
+		msgbox(format("Ryder: {COLOR BLUE}Don't get too confident in your abilities.\p{COLOR DARK_GREY}Ryder: {COLOR BLUE}Anyways, I saw some thugs in the Library. Don't make this victory go to waste."))
 		closemessage
-		applymovement(OLD_LADY, AlnerwickCity_Robbery_Movement_0)
+		applymovement(RIVAL, AlnerwickCity_RivalBattle_Movement_2)
 		waitmovement(0)
-		msgbox(format("Old Lady: {COLOR RED}This smug man is trying to steal my beloved literature!"))
-		closemessage
-		applymovement(GRUNT, AlnerwickCity_Robbery_Movement_1)
-		waitmovement(0)
-		msgbox(format("Grunt: {COLOR BLUE}Don't make me use my Koffing ye' old slag!"))
-		closemessage
-		applymovement(OLD_LADY, AlnerwickCity_Robbery_Movement_2)
-		waitmovement(0)
-		msgbox(format("Old Lady: {COLOR RED}You don't deserve what this book pertains!"))
-		closemessage
-		applymovement(OLD_LADY, AlnerwickCity_Robbery_Movement_3)
-		msgbox(format("Old Lady: {COLOR RED}Trainer, please get this man away from me!"))
-		closemessage
-		applymovement(GRUNT, AlnerwickCity_Robbery_Movement_3)
-		waitmovement(0)
-		msgbox(format("Grunt: {COLOR BLUE}Who do you think you are, kid?"))
+		setvar(VAR_ALNERWICKCITY_RIVALBATTLE, 1)
+		setflag(FLAG_ALNERWICKCITY_RIVALBATTLE)
+		removeobject(RIVAL)
+		releaseall
+		end
 	}
 }
-movement AlnerwickCity_Robbery_Movement_0 {
-	walk_fast_down * 6
-}
-movement AlnerwickCity_Robbery_Movement_1 {
-	walk_down * 6
-}
-movement AlnerwickCity_Robbery_Movement_2 {
-	walk_in_place_up
-}
-movement AlnerwickCity_Robbery_Movement_3 {
+
+movement AlnerwickCity_RivalBattle_Movement_0 {
 	walk_in_place_down
+}
+movement AlnerwickCity_RivalBattle_Movement_1_0 {
+	walk_down * 3
+	walk_in_place_left
+}
+movement AlnerwickCity_RivalBattle_Movement_1_1 {
+	walk_down * 2
+}
+movement AlnerwickCity_RivalBattle_Movement_1_2 {
+	walk_down * 3
+	walk_in_place_right
+}
+movement AlnerwickCity_RivalBattle_Movement_2 {
+	walk_up * 3
+	walk_right * 9
+}
+movement AlnerwickCity_RivalBattle_Movement_3 {
+	walk_in_place_right
+}
+movement AlnerwickCity_RivalBattle_Movement_4 {
+	walk_in_place_left
+}
+
+script AlnerwickCity_Object_Girl {
+	msgbox(format("{COLOR RED}I just recently started on my Pokémon journey, but it's a lot of work! I'm just taking a little break here."), MSGBOX_NPC)
+	end
+}
+script AlnerwickCity_Object_CreepyDude {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Isn't it strange that there are people in this building, but there is no obvious entrance?"), MSGBOX_AUTOCLOSE)
+	applymovement(3, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	end
+}
+script AlnerwickCity_Object_Youngster {
+	msgbox(format("{COLOR BLUE}I wanted to participate in the Ryoko League this year, but I signed up too late."), MSGBOX_NPC)
+	end
+}
+script AlnerwickCity_Object_Mart_Employee {
+	msgbox(format("{COLOR BLUE}Hello there!\pI bet you're wondering where this city's Poké Mart is at.\pWell, Pokémon Centers now also include Poké Marts! So I'm now out of a job..."), MSGBOX_NPC)
+	end
+}
+const MartEmployee = 2
+
+script AlnerwickCity_Event_MartEmployee {
+	lock
+	applymovement(MartEmployee, Common_Movement_FacePlayer)
+	waitmovement(0)
+	delay(10)
+	msgbox(format("{COLOR BLUE}Hello there!\pI'm sure you're looking for this city's Poké Mart.\lWell, as of last week, Poké Marts are now a part of Pokémon Centers.\pJust talk to my friend on the left side of the Pokémon Center to start buying!"), MSGBOX_AUTOCLOSE)
+	applymovement(EVENT_OBJ_ID_PLAYER, AlnerwickCity_Event_MartEmployee_Movement_0)
+	waitmovement(0)
+	release
+	end
+}
+movement AlnerwickCity_Event_MartEmployee_Movement_0 {
+	walk_left * 1
 }

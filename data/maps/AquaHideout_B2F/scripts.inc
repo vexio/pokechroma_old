@@ -66,7 +66,7 @@ AquaHideout_B2F_Movement_233E85: @ 8233E85
 	step_end
 
 AquaHideout_B2F_EventScript_233E8A:: @ 8233E8A
-	trainerbattle_single TRAINER_GRUNT_4, AquaHideout_B2F_Text_2340B4, AquaHideout_B2F_Text_2340F0, AquaHideout_B2F_EventScript_233EA5
+	trainerbattle_single TRAINER_ALNERWICKCITY_RIVAL_2, AquaHideout_B2F_Text_2340B4, AquaHideout_B2F_Text_2340F0, AquaHideout_B2F_EventScript_233EA5
 	msgbox AquaHideout_B2F_Text_234112, MSGBOX_AUTOCLOSE
 	end
 

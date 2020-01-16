@@ -109,3 +109,113 @@ Route102_Text_1EC35B: @ 81EC35B
 Route102_Text_1EC373: @ 81EC373
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
+
+AlnerwickPass_Sign_RouteSign::
+	msgbox AlnerwickPass_Sign_RouteSign_Text_0, MSGBOX_SIGN
+	end
+
+
+AlnerwickPass_TrainerBattle_Lass::
+	trainerbattle_single TRAINER_ALNERWICKPASS_LASS, AlnerwickPass_TrainerBattle_Lass_Text_0, AlnerwickPass_TrainerBattle_Lass_Text_1
+	msgbox AlnerwickPass_TrainerBattle_Lass_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+AlnerwickPass_TrainerBattle_Fisherman::
+	trainerbattle_single TRAINER_ALNERWICKPASS_FISHERMAN, AlnerwickPass_TrainerBattle_Fisherman_Text_0, AlnerwickPass_TrainerBattle_Fisherman_Text_1
+	msgbox AlnerwickPass_TrainerBattle_Fisherman_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+AlnerwickPass_TrainerBattle_Gentleman::
+	trainerbattle_single TRAINER_ALNERWICKPASS_GENTLEMAN, AlnerwickPass_TrainerBattle_Gentleman_Text_0, AlnerwickPass_TrainerBattle_Gentleman_Text_1
+	msgbox AlnerwickPass_TrainerBattle_Gentleman_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+AlnerwickPass_TrainerBattle_RichBoy::
+	trainerbattle_single TRAINER_ALNERWICKPASS_RICHBOY, AlnerwickPass_TrainerBattle_RichBoy_Text_0, AlnerwickPass_TrainerBattle_RichBoy_Text_1
+	msgbox AlnerwickPass_TrainerBattle_RichBoy_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+AlnerwickPass_TrainerBattle_Hiker::
+	trainerbattle_single TRAINER_ALNERWICKPASS_HIKER, AlnerwickPass_TrainerBattle_Hiker_Text_0, AlnerwickPass_TrainerBattle_Hiker_Text_1
+	msgbox AlnerwickPass_TrainerBattle_Hiker_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+AlnerwickPass_TrainerBattle_LittleBoy::
+	trainerbattle_single TRAINER_ALNERWICKPASS_LITTLEBOY, AlnerwickPass_TrainerBattle_LittleBoy_Text_0, AlnerwickPass_TrainerBattle_LittleBoy_Text_1
+	msgbox AlnerwickPass_TrainerBattle_LittleBoy_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+AlnerwickPass_Sign_RouteSign_Text_0:
+	.string "{LEFT_ARROW} Alnerwick City\n{RIGHT_ARROW} Davnridge Town$"
+
+AlnerwickPass_TrainerBattle_Lass_Text_0:
+	.string "{COLOR RED}Now that we've made eye contact, you\n"
+	.string "have to battle me!$"
+
+AlnerwickPass_TrainerBattle_Lass_Text_1:
+	.string "Sometimes other trainers are just\n"
+	.string "stronger$"
+
+AlnerwickPass_TrainerBattle_Lass_Text_2:
+	.string "{COLOR RED}Sometimes other trainers are stronger\n"
+	.string "than you think.$"
+
+AlnerwickPass_TrainerBattle_Fisherman_Text_0:
+	.string "{COLOR BLUE}Shh!$"
+
+AlnerwickPass_TrainerBattle_Fisherman_Text_1:
+	.string "Gah!\n"
+	.string "Lost the catch!$"
+
+AlnerwickPass_TrainerBattle_Fisherman_Text_2:
+	.string "{COLOR BLUE}You made me lose my catch...$"
+
+AlnerwickPass_TrainerBattle_Gentleman_Text_0:
+	.string "{COLOR BLUE}Have you seen any Geodes?$"
+
+AlnerwickPass_TrainerBattle_Gentleman_Text_1:
+	.string "Geodudes come from Geode chunks, and\n"
+	.string "from there they roam$"
+
+AlnerwickPass_TrainerBattle_Gentleman_Text_2:
+	.string "{COLOR BLUE}Geodudes are my favorite Pokémon!$"
+
+AlnerwickPass_TrainerBattle_RichBoy_Text_0:
+	.string "{COLOR BLUE}I only use rare Pokémon$"
+
+AlnerwickPass_TrainerBattle_RichBoy_Text_1:
+	.string "No!\n"
+	.string "My rarest one!$"
+
+AlnerwickPass_TrainerBattle_RichBoy_Text_2:
+	.string "{COLOR BLUE}My mother and father collect rare\n"
+	.string "Pokémon, and they give me their\l"
+	.string "favorites!$"
+
+AlnerwickPass_TrainerBattle_Hiker_Text_0:
+	.string "{COLOR BLUE}These hills are fantastic for amateur\n"
+	.string "hikers!$"
+
+AlnerwickPass_TrainerBattle_Hiker_Text_1:
+	.string "Wow!\n"
+	.string "With that team, you could be a great\l"
+	.string "hiker!$"
+
+AlnerwickPass_TrainerBattle_Hiker_Text_2:
+	.string "{COLOR BLUE}These hills is where I learned I wanted\n"
+	.string "to become a hiker!$"
+
+AlnerwickPass_TrainerBattle_LittleBoy_Text_0:
+	.string "{COLOR BLUE}My mommy gave me a Pokémon!$"
+
+AlnerwickPass_TrainerBattle_LittleBoy_Text_1:
+	.string "Meanie!$"
+
+AlnerwickPass_TrainerBattle_LittleBoy_Text_2:
+	.string "{COLOR BLUE}My mommy gave me that Pokémon!$"

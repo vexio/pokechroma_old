@@ -44,7 +44,7 @@ PacifidlogTown_House4_Text_204035: @ 8204035
 
 PacifidlogTown_House4_Text_20404E: @ 820404E
 	.string "Yes?\n"
-	.string "YES TOWN?\p"
+	.string "Yes TOWN?\p"
 	.string "I've never heard of a place like that.$"
 
 PacifidlogTown_House4_Text_204084: @ 8204084

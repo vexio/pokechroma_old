@@ -12,7 +12,7 @@ MtPyre_3F_EventScript_23176A:: @ 823176A
 	end
 
 MtPyre_3F_EventScript_231781:: @ 8231781
-	trainerbattle_single TRAINER_GABRIELLE_1, MtPyre_3F_Text_231952, MtPyre_3F_Text_23196A, MtPyre_3F_EventScript_2317AD
+	trainerbattle_single TRAINER_ALNERWICKPASS_GENTLEMAN, MtPyre_3F_Text_231952, MtPyre_3F_Text_23196A, MtPyre_3F_EventScript_2317AD
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, 1
 	goto_if_eq MtPyre_3F_EventScript_2317CC
@@ -24,12 +24,12 @@ MtPyre_3F_EventScript_2317AD:: @ 82317AD
 	special sub_80B4808
 	waitmovement 0
 	msgbox MtPyre_3F_Text_231A49, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GABRIELLE_1
+	register_matchcall TRAINER_ALNERWICKPASS_GENTLEMAN
 	release
 	end
 
 MtPyre_3F_EventScript_2317CC:: @ 82317CC
-	trainerbattle_rematch TRAINER_GABRIELLE_1, MtPyre_3F_Text_231AAB, MtPyre_3F_Text_231AE6
+	trainerbattle_rematch TRAINER_ALNERWICKPASS_GENTLEMAN, MtPyre_3F_Text_231AAB, MtPyre_3F_Text_231AE6
 	msgbox MtPyre_3F_Text_231B0D, MSGBOX_AUTOCLOSE
 	end
 

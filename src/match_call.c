@@ -620,7 +620,7 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(2, 5),
     },
     {
-        .trainerId = TRAINER_GABRIELLE_1,
+        .trainerId = TRAINER_ALNERWICKPASS_GENTLEMAN,
         .unused = 0,
         .battleTopicTextIds = { TEXT_ID(1, 8), TEXT_ID(2, 8), TEXT_ID(3, 8) },
         .generalTextId = TEXT_ID(1, 2),
@@ -674,7 +674,7 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(2, 3),
     },
     {
-        .trainerId = TRAINER_SAWYER_1,
+        .trainerId = TRAINER_CANVASCREEK_YOUNGSTER,
         .unused = 0,
         .battleTopicTextIds = { TEXT_ID(1, 15), TEXT_ID(2, 3), TEXT_ID(3, 3) },
         .generalTextId = TEXT_ID(1, 1),

@@ -1,5 +1,5 @@
 const u8 gEasyChatWord_Thanks[] = _("THANKS");
-const u8 gEasyChatWord_Yes[] = _("YES");
+const u8 gEasyChatWord_Yes[] = _("Yes");
 const u8 gEasyChatWord_HereGoes[] = _("HERE GOES");
 const u8 gEasyChatWord_HereICome[] = _("HERE I COME");
 const u8 gEasyChatWord_HereItIs[] = _("HERE IT IS");

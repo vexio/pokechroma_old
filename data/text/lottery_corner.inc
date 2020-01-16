@@ -64,7 +64,7 @@ LilycoveCity_DepartmentStore_1F_Text_2A6731: @ 82A6731
 LilycoveCity_DepartmentStore_1F_Text_2A678C: @ 82A678C
 	.string "Oh?\n"
 	.string "You seem to have no room for this.\p"
-	.string "Please make room in your BAG and\n"
+	.string "Please make room in your Bag and\n"
 	.string "let me know.$"
 
 LilycoveCity_DepartmentStore_1F_Text_2A67E1: @ 82A67E1

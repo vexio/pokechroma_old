@@ -1139,8 +1139,8 @@ SlateportCity_BattleTentLobby_Text_23F68C: @ 823F68C
 	.string "{STR_VAR_1}.$"
 
 SlateportCity_BattleTentLobby_Text_23F6A6: @ 823F6A6
-	.string "Oh, your BAG appears to be full.\p"
-	.string "Please make room in your BAG, then come\n"
+	.string "Oh, your Bag appears to be full.\p"
+	.string "Please make room in your Bag, then come\n"
 	.string "see me.$"
 
 BattleFrontier_BattleTowerLobby_Text_23F6F7: @ 823F6F7

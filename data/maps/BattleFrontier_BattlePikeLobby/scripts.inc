@@ -480,7 +480,7 @@ BattleFrontier_BattlePikeLobby_Text_25C621: @ 825C621
 	.string "Which heading do you want to read?$"
 
 BattleFrontier_BattlePikeLobby_Text_25C644: @ 825C644
-	.string "The BAG and POKéNAV may not be used\n"
+	.string "The Bag and POKéNAV may not be used\n"
 	.string "during a Battle Choice challenge.$"
 
 BattleFrontier_BattlePikeLobby_Text_25C68A: @ 825C68A

@@ -2391,19 +2391,19 @@ Common_Movement_FaceOriginalDirection: @ 82725A2
 	step_end
 
 Common_Movement_WalkInPlaceLeft: @ 82725A4
-	walk_in_place_fastest_left
+	walk_in_place_left
 	step_end
 
 Common_Movement_WalkInPlaceUp: @ 82725A6
-	walk_in_place_fastest_up
+	walk_in_place_up
 	step_end
 
 Common_Movement_WalkInPlaceRight: @ 82725A8
-	walk_in_place_fastest_right
+	walk_in_place_right
 	step_end
 
 Common_Movement_WalkInPlaceDown: @ 82725AA
-	walk_in_place_fastest_down
+	walk_in_place_down
 	step_end
 
 RustboroCity_Movement_2725AC: @ 82725AC
@@ -2562,7 +2562,7 @@ gUnknown_08272A78:: @ 8272A78
 	.string "Obtained the {STR_VAR_2}!$"
 
 gUnknown_08272A89:: @ 8272A89
-	.string "The BAG is full…$"
+	.string "The Bag is full…$"
 
 gText_PutItemInPocket:: @ 8272A9A
 	.string "{PLAYER} put away the {STR_VAR_2}\nin the {STR_VAR_3} POCKET.$"
@@ -2571,10 +2571,10 @@ gText_PlayerFoundOneItem:: @ 8272ABF
 	.string "{PLAYER} found one {STR_VAR_2}!$"
 
 gText_TooBadBagIsFull:: @ 8272AD0
-	.string "Too bad!\nThe BAG is full…$"
+	.string "Too bad!\nThe Bag is full…$"
 
 gText_PlayerPutItemInBag:: @ 8272AEA
-	.string "{PLAYER} put away the {STR_VAR_2}\nin the BAG.$"
+	.string "{PLAYER} put away the {STR_VAR_2}\nin the Bag.$"
 
 gUnknown_08272B09:: @ 8272B09
 	.string "Obtained the {STR_VAR_2}!$"
@@ -2601,7 +2601,7 @@ gUnknown_08272C5F:: @ 8272C5F
 	.string "The sandstorm is vicious.\nIt's impossible to keep going.$"
 
 gText_SelectWithoutRegisteredItem:: @ 8272C98
-	.string "An item in the BAG can be\nregistered to SELECT for easy use.$"
+	.string "An item in the Bag can be\nregistered to SELECT for easy use.$"
 
 gUnknown_08272CD5:: @ 8272CD5
 	.string "There's an e-mail from POKéMON TRAINER\nSCHOOL.\p… … … … … …\pA POKéMON may learn up to four moves.\pA TRAINER's expertise is tested on the\nmove sets chosen for POKéMON.\p… … … … … …$"
@@ -4950,7 +4950,7 @@ LilycoveCity_PokemonCenter_1F_Text_2A8DBD: @ 82A8DBD
 	.string "Oh, you can't have it if you don't have\n"
 	.string "the space for it.\p"
 	.string "Please come see me when you get\n"
-	.string "your BAG organized…$"
+	.string "your Bag organized…$"
 
 LilycoveCity_PokemonCenter_1F_Text_2A8E2B: @ 82A8E2B
 	.string "I'm the QUIZ LADY!\n"
@@ -5003,7 +5003,7 @@ LilycoveCity_PokemonCenter_1F_Text_2A9056: @ 82A9056
 	.string "one {STR_VAR_2}!$"
 
 LilycoveCity_PokemonCenter_1F_Text_2A906A: @ 82A906A
-	.string "Oh? Your BAG is filled up!\n"
+	.string "Oh? Your Bag is filled up!\n"
 	.string "Come see me when you have room.$"
 
 LilycoveCity_PokemonCenter_1F_Text_2A90A5: @ 82A90A5
@@ -5977,7 +5977,7 @@ FallarborTown_BattleTentLobby_Text_2C4F69: @ 82C4F69
 
 FallarborTown_BattleTentLobby_Text_2C4F83: @ 82C4F83
 	.string "Oh?\n"
-	.string "Your BAG seems to be full.\p"
+	.string "Your Bag seems to be full.\p"
 	.string "I urge you to clear space and\n"
 	.string "return for your prize.$"
 
@@ -6161,7 +6161,7 @@ SlateportCity_BattleTentLobby_Text_2C5D14: @ 82C5D14
 SlateportCity_BattleTentLobby_Text_2C5D52: @ 82C5D52
 	.string "Oh?\n"
 	.string "You seem to have no room for this.\p"
-	.string "Please make room in your BAG and\n"
+	.string "Please make room in your Bag and\n"
 	.string "let me know.$"
 
 SlateportCity_BattleTentLobby_Text_2C5DA7: @ 82C5DA7
@@ -7117,3 +7117,9 @@ gText_082C877B:: @ 82C877B
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/SinnohRoute_205/scripts.inc"
+
+	.include "data/maps/OdaleTown_Library/scripts.inc"
+
+	.include "data/maps/OdaleTown_House3/scripts.inc"
+
+	.include "data/maps/OldaleTown_House4/scripts.inc"

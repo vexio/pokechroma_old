@@ -822,7 +822,7 @@ static void Task_SetClock4(u8 taskId)
 {
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
-    case 0: //YES
+    case 0: //Yes
         PlaySE(SE_SELECT);
         gTasks[taskId].func = Task_SetClock5;
         break;

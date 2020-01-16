@@ -1,0 +1,195 @@
+raw `
+OldaleTown_PokemonCenter_1F_MapScripts:: @ 81FC006
+	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_PokemonCenter_1F_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, OldaleTown_PokemonCenter_1F_MapScript1_277C30
+	.byte 0
+    
+OldaleTown_PokemonCenter_1F_OnTransition: @ 81FC011
+	setrespawn HEAL_LOCATION_OLDALE_TOWN
+	call OldaleTown_PokemonCenter_1F_EventScript_2718DE
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_1FC01A:: @ 81FC01A
+	setvar VAR_0x800B, 1
+	call OldaleTown_PokemonCenter_1F_EventScript_27191E
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_1FC028:: @ 81FC028
+	msgbox OldaleTown_PokemonCenter_1F_Text_1FC059, MSGBOX_NPC
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_1FC031:: @ 81FC031
+	msgbox OldaleTown_PokemonCenter_1F_Text_1FC0CD, MSGBOX_NPC
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_1FC03A:: @ 81FC03A
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_POKEDEX_GET, OldaleTown_PokemonCenter_1F_EventScript_1FC04F
+	msgbox OldaleTown_PokemonCenter_1F_Text_1FC148, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_1FC04F:: @ 81FC04F
+	msgbox OldaleTown_PokemonCenter_1F_Text_1FC1B9, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_Text_1FC059: @ 81FC059
+	.string "That PC in the corner there is\n"
+	.string "for any POKéMON TRAINER to use.\p"
+	.string "Naturally, that means you're welcome\n"
+	.string "to use it, too.$"
+
+OldaleTown_PokemonCenter_1F_Text_1FC0CD: @ 81FC0CD
+	.string "POKéMON CENTERS are great!\p"
+	.string "You can use their services as much\n"
+	.string "as you like, and it's all for free.\l"
+	.string "You never have to worry!$"
+
+OldaleTown_PokemonCenter_1F_Text_1FC148: @ 81FC148
+	.string "The POKéMON WIRELESS CLUB on\n"
+	.string "the second floor was built recently.\p"
+	.string "But they say they're still making\n"
+	.string "adjustments.$"
+
+OldaleTown_PokemonCenter_1F_Text_1FC1B9: @ 81FC1B9
+	.string "The POKéMON WIRELESS CLUB on\n"
+	.string "the second floor was built recently.\p"
+	.string "I traded POKéMON right away.$"
+
+`
+
+script Global_PokeMart_Shop {
+    lock
+    message(format("Employee: {COLOR BLUE}Hello!\nWhat could I interest you in?"))
+    if (flag(FLAG_BADGE08_GET)) {
+        pokemart(Global_PokeMart_Badge08)
+    } elif (flag(FLAG_BADGE07_GET)) {
+        pokemart(Global_PokeMart_Badge07)
+    } elif (flag(FLAG_BADGE06_GET)) {
+        pokemart(Global_PokeMart_Badge06)
+    } elif (flag(FLAG_BADGE05_GET)) {
+        pokemart(Global_PokeMart_Badge05)
+    } elif (flag(FLAG_BADGE04_GET)) {
+        pokemart(Global_PokeMart_Badge04)
+    } elif (flag(FLAG_BADGE03_GET)) {
+        pokemart(Global_PokeMart_Badge03)
+    } elif (flag(FLAG_BADGE02_GET)) {
+        pokemart(Global_PokeMart_Badge02)
+    } elif (flag(FLAG_BADGE01_GET)) {
+        pokemart(Global_PokeMart_Badge01)
+    } else {
+        pokemart(Global_PokeMart_BadgeNone)
+    }
+    release
+    end
+}
+
+raw `
+Global_PokeMart_Badge08::
+    .2byte ITEM_ULTRA_BALL
+    .2byte ITEM_GREAT_BALL
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_MAX_POTION
+    .2byte ITEM_HYPER_POTION
+    .2byte ITEM_SUPER_POTION
+    .2byte ITEM_POTION
+    .2byte ITEM_FULL_HEAL
+    .2byte ITEM_REVIVE
+    .2byte ITEM_MAX_ETHER
+    .2byte ITEM_NONE
+    release
+    end
+
+Global_PokeMart_Badge07::
+    .2byte ITEM_ULTRA_BALL
+    .2byte ITEM_GREAT_BALL
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_HYPER_POTION
+    .2byte ITEM_SUPER_POTION
+    .2byte ITEM_POTION
+    .2byte ITEM_FULL_HEAL
+    .2byte ITEM_ETHER
+    .2byte ITEM_NONE
+    release
+    end
+
+Global_PokeMart_Badge06::
+    .2byte ITEM_ULTRA_BALL
+    .2byte ITEM_GREAT_BALL
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_HYPER_POTION
+    .2byte ITEM_SUPER_POTION
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_BURN_HEAL
+    .2byte ITEM_ICE_HEAL
+    .2byte ITEM_AWAKENING
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_NONE
+    release
+    end 
+
+Global_PokeMart_Badge05::
+    .2byte ITEM_GREAT_BALL
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_SUPER_POTION
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_BURN_HEAL
+    .2byte ITEM_AWAKENING
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_NONE
+    release
+    end 
+Global_PokeMart_Badge04::
+    .2byte ITEM_GREAT_BALL
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_SUPER_POTION
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_BURN_HEAL
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_NONE
+    release
+    end 
+Global_PokeMart_Badge03::
+    .2byte ITEM_GREAT_BALL
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_SUPER_POTION
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_NONE
+    release
+    end 
+Global_PokeMart_Badge02::
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_SUPER_POTION
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_NONE
+    release
+    end 
+Global_PokeMart_Badge01::
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_NONE
+    release
+    end 
+Global_PokeMart_BadgeNone::
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_NONE
+    release
+    end 
+`

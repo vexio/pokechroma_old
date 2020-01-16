@@ -1143,8 +1143,8 @@
 
 #define FLAG_CANVASTOWN_RIVAL                                       0x493 // Unused Flag // CanvasTown_Trigger_RivalEncounter -> id: 3
 #define FLAG_HAS_STARTER                                            0x494 // Unused Flag // CanvasCreek_Trigger_BoyEvent
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
+#define FLAG_ALNERWICKCITY_RIVALBATTLE                              0x495 // Unused Flag // AlnerwickCity Rival Battle
+#define FLAG_ALNERWICKLIBRARY_EVENT                                 0x496 // Unused Flag // AlnerwickLibrary Grunt
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag

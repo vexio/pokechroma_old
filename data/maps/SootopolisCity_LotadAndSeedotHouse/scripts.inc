@@ -138,7 +138,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_22750E: @ 822750E
 
 SootopolisCity_LotadAndSeedotHouse_Text_227524: @ 8227524
 	.string "Hunh?\n"
-	.string "Your BAG is crammed full.$"
+	.string "Your Bag is crammed full.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_227544: @ 8227544
 	.string "{STR_VAR_2} inches, is it?\p"
@@ -185,7 +185,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_2277F4: @ 82277F4
 
 SootopolisCity_LotadAndSeedotHouse_Text_22780A: @ 822780A
 	.string "Hunh?\n"
-	.string "Your BAG is crammed full.$"
+	.string "Your Bag is crammed full.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_22782A: @ 822782A
 	.string "{STR_VAR_2} inches?\p"

@@ -265,7 +265,7 @@ Route101_Text_1EBE8F: @ 81EBE8F
 Route101_Text_1EBE9A: @ 81EBE9A
 	.string "Hello! You over there!\n"
 	.string "Please! Help!\p"
-	.string "In my BAG!\n"
+	.string "In my Bag!\n"
 	.string "There's a POKé BALL!$"
 
 Route101_Text_1EBEDF: @ 81EBEDF
@@ -347,13 +347,55 @@ CanvasCreek_Object_Boy::
 	end
 
 
+CanvasCreek_TrainerBattle_Youngster::
+	trainerbattle_single TRAINER_CANVASCREEK_YOUNGSTER, CanvasCreek_TrainerBattle_Youngster_Text_0, CanvasCreek_TrainerBattle_Youngster_Text_1
+	msgbox CanvasCreek_TrainerBattle_Youngster_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+CanvasCreek_TrainerBattle_RichBoy::
+	trainerbattle_single TRAINER_CANVASCREEK_RICHBOY, CanvasCreek_TrainerBattle_RichBoy_Text_0, CanvasCreek_TrainerBattle_RichBoy_Text_1
+	msgbox CanvasCreek_TrainerBattle_RichBoy_Text_2, MSGBOX_AUTOCLOSE
+	end
+
+
+CanvasCreek_Girl::
+	msgbox CanvasCreek_Girl_Text_0, MSGBOX_NPC
+	end
+
+
 CanvasCreek_Sign_Lab_Text_0:
 	.string "Professor Cypress' Lab$"
 
 CanvasCreek_Route_Sign_Text_0:
 	.string "{LEFT_ARROW} Alnerwick City\n"
-	.string "{RIGHT_ARROW} Professor Cypress's Lab\p"
+	.string "{RIGHT_ARROW} Prof. Cypress' Laboratory\l"
 	.string "{DOWN_ARROW} Canvas Town$"
+
+CanvasCreek_TrainerBattle_Youngster_Text_0:
+	.string "{COLOR BLUE}I just caught my first Pokémon!$"
+
+CanvasCreek_TrainerBattle_Youngster_Text_1:
+	.string "Now I gotta find a new Pokémon...$"
+
+CanvasCreek_TrainerBattle_Youngster_Text_2:
+	.string "{COLOR BLUE}Now I gotta find a new Pokémon...$"
+
+CanvasCreek_TrainerBattle_RichBoy_Text_0:
+	.string "{COLOR BLUE}I finally found my Pokéball!\p"
+	.string "Now we can finally battle!$"
+
+CanvasCreek_TrainerBattle_RichBoy_Text_1:
+	.string "After all this time searching for it...$"
+
+CanvasCreek_TrainerBattle_RichBoy_Text_2:
+	.string "{COLOR BLUE}I found my Pokéball next to the big\n"
+	.string "fancy tree!$"
+
+CanvasCreek_Girl_Text_0:
+	.string "{COLOR RED}I prefer the scent of red flowers over\n"
+	.string "the blue flowers, but they both smell\l"
+	.string "beautiful!$"
 
 _CanvasCreek_RICH_BOY_MSG::
 	.string "{COLOR BLUE}Hey!\p"

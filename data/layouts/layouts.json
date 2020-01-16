@@ -653,7 +653,7 @@
         {
             "blockdata_filepath": "data/layouts/DewfordTown_Hall/map.bin",
             "border_filepath": "data/layouts/DewfordTown_Hall/border.bin",
-            "height": 9,
+            "height": 11,
             "id": "LAYOUT_DEWFORD_TOWN_HALL",
             "name": "DewfordTown_Hall_Layout",
             "primary_tileset": "gTileset_Building",
@@ -4419,6 +4419,36 @@
             "primary_tileset": "gTileset_General",
             "secondary_tileset": "gTileset_Petalburg",
             "width": 36
+        },
+        {
+            "blockdata_filepath": "data/layouts/OdaleTown_Library/map.bin",
+            "border_filepath": "data/layouts/OdaleTown_Library/border.bin",
+            "height": 22,
+            "id": "LAYOUT_ODALE_TOWN_LIBRARY",
+            "name": "OdaleTown_Library_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_Library",
+            "width": 15
+        },
+        {
+            "blockdata_filepath": "data/layouts/OdaleTown_House3/map.bin",
+            "border_filepath": "data/layouts/OdaleTown_House3/border.bin",
+            "height": 10,
+            "id": "LAYOUT_ODALE_TOWN_HOUSE3",
+            "name": "OdaleTown_House3_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 11
+        },
+        {
+            "blockdata_filepath": "data/layouts/OldaleTown_House4/map.bin",
+            "border_filepath": "data/layouts/OldaleTown_House4/border.bin",
+            "height": 10,
+            "id": "LAYOUT_OLDALE_TOWN_HOUSE4",
+            "name": "OldaleTown_House4_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 11
         }
     ],
     "layouts_table_label": "gMapLayouts"

@@ -145,7 +145,7 @@ Route121_EventScript_1F5FCA:: @ 81F5FCA
 	end
 
 Route121_EventScript_1F5FE1:: @ 81F5FE1
-	trainerbattle_single TRAINER_MARCEL, Route121_Text_29FB35, Route121_Text_29FB8C
+	trainerbattle_single TRAINER_ALNERWICKPASS_HIKER, Route121_Text_29FB35, Route121_Text_29FB8C
 	msgbox Route121_Text_29FBA8, MSGBOX_AUTOCLOSE
 	end
 

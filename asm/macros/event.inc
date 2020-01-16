@@ -817,7 +817,7 @@
 	.byte 0x6d
 	.endm
 
-	@ Displays a YES/NO multichoice box at the specified coordinates, and blocks script execution until the user makes a selection. Their selection is stored in variable 0x800D (LASTRESULT); 0x0000 for "NO" or if the user pressed B, and 0x0001 for "YES".
+	@ Displays a Yes/NO multichoice box at the specified coordinates, and blocks script execution until the user makes a selection. Their selection is stored in variable 0x800D (LASTRESULT); 0x0000 for "NO" or if the user pressed B, and 0x0001 for "Yes".
 	.macro yesnobox x:req, y:req
 	.byte 0x6e
 	.byte \x
@@ -1641,7 +1641,7 @@
 	MSGBOX_YESNO = 5
 	MSGBOX_AUTOCLOSE = 6
 
-	YES = 1
+	Yes = 1
 	NO  = 0
 
 	.macro msgbox text:req, type=MSGBOX_DEFAULT

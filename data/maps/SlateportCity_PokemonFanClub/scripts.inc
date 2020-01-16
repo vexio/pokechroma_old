@@ -327,7 +327,7 @@ SlateportCity_PokemonFanClub_Text_20A719: @ 820A719
 	.string "Your POKéMON is growing quite well,\n"
 	.string "so you deserve a reward.\p"
 	.string "Unfortunately, you have no space for\n"
-	.string "this in your BAG.$"
+	.string "this in your Bag.$"
 
 SlateportCity_PokemonFanClub_Text_20A795: @ 820A795
 	.string "Your {STR_VAR_1}, it is growing in\n"

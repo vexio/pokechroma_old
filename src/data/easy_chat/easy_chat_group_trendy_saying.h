@@ -1,5 +1,5 @@
 const u8 gEasyChatWord_KthxBye[] = _("KTHX, BYE.");
-const u8 gEasyChatWord_YesSirExcl[] = _("YES, SIR!");
+const u8 gEasyChatWord_YesSirExcl[] = _("Yes, SIR!");
 const u8 gEasyChatWord_AvantGarde[] = _("AVANT GARDE");
 const u8 gEasyChatWord_Couple[] = _("COUPLE");
 const u8 gEasyChatWord_MuchObliged[] = _("MUCH OBLIGED");

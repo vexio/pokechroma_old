@@ -2938,7 +2938,7 @@ Route119_Text_29E5B1: @ 829E5B1
 
 Route119_Text_29E5CB: @ 829E5CB
 	.string "You're asking if my parasol is heavy?\n"
-	.string "Your BAG is filled with more junk than\l"
+	.string "Your Bag is filled with more junk than\l"
 	.string "I ever carry around.$"
 
 Route120_Text_29E62D: @ 829E62D
@@ -3300,7 +3300,7 @@ Route121_Text_29F9AE: @ 829F9AE
 	.string "I bought too much stuff at\n"
 	.string "the LILYCOVE DEPT. STORE.\p"
 	.string "It's up the road from here.\n"
-	.string "I wish I had a BAG like yours.$"
+	.string "I wish I had a Bag like yours.$"
 
 Route121_Text_29FA1E: @ 829FA1E
 	.string "There's nothing I love more than\n"

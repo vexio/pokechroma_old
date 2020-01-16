@@ -124,7 +124,7 @@ Route123_EventScript_1F631B:: @ 81F631B
 	end
 
 Route123_EventScript_1F6332:: @ 81F6332
-	trainerbattle_single TRAINER_ALBERTO, Route123_Text_2A06AF, Route123_Text_2A0704
+	trainerbattle_single TRAINER_ALNERWICKPASS_LITTLEBOY, Route123_Text_2A06AF, Route123_Text_2A0704
 	msgbox Route123_Text_2A072B, MSGBOX_AUTOCLOSE
 	end
 

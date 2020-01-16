@@ -119,6 +119,6 @@ GraniteCave_StevensRoom_Text_22DF8C: @ 822DF8C
 	.string "Now, I've got to hurry along.$"
 
 GraniteCave_StevensRoom_Text_22DFAA: @ 822DFAA
-	.string "Oh, your BAG is full…\n"
+	.string "Oh, your Bag is full…\n"
 	.string "That's too bad, then.$"
 

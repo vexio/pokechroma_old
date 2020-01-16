@@ -266,7 +266,7 @@ Route101_Text_1EBE8F: @ 81EBE8F
 Route101_Text_1EBE9A: @ 81EBE9A
 	.string "Hello! You over there!\n"
 	.string "Please! Help!\p"
-	.string "In my BAG!\n"
+	.string "In my Bag!\n"
 	.string "There's a POKé BALL!$"
 
 Route101_Text_1EBEDF: @ 81EBEDF
@@ -309,7 +309,7 @@ script CanvasCreek_Sign_Lab {
 }
 
 script CanvasCreek_Route_Sign {
-	msgbox(format("{LEFT_ARROW} Alnerwick City\n{RIGHT_ARROW} Professor Cypress's Lab\p{DOWN_ARROW} Canvas Town"), MSGBOX_SIGN)
+	msgbox(format("{LEFT_ARROW} Alnerwick City\n{RIGHT_ARROW} Prof. Cypress' Laboratory\l{DOWN_ARROW} Canvas Town"), MSGBOX_SIGN)
 	end
 }
 // end
@@ -351,3 +351,19 @@ script CanvasCreek_Object_Boy {
 	end
 }
 // end
+
+// trainerbattles
+script CanvasCreek_TrainerBattle_Youngster {
+	trainerbattle_single(TRAINER_CANVASCREEK_YOUNGSTER, format("{COLOR BLUE}I just caught my first Pokémon!"), format("Now I gotta find a new Pokémon..."))
+	msgbox(format("{COLOR BLUE}Now I gotta find a new Pokémon..."), MSGBOX_AUTOCLOSE)
+	end
+}
+script CanvasCreek_TrainerBattle_RichBoy {
+	trainerbattle_single(TRAINER_CANVASCREEK_RICHBOY, format("{COLOR BLUE}I finally found my Pokéball!\pNow we can finally battle!"), format("After all this time searching for it..."))
+	msgbox(format("{COLOR BLUE}I found my Pokéball next to the big fancy tree!"), MSGBOX_AUTOCLOSE)
+	end
+}
+script CanvasCreek_Girl {
+	msgbox(format("{COLOR RED}I prefer the scent of red flowers over the blue flowers, but they both smell beautiful!"), MSGBOX_NPC)
+	end
+}

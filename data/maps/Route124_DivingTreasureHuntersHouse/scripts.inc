@@ -330,7 +330,7 @@ Route124_DivingTreasureHuntersHouse_Text_27117B: @ 827117B
 	.string "Do you want to trade something else?$"
 
 Route124_DivingTreasureHuntersHouse_Text_2711A0: @ 82711A0
-	.string "Whoops, your BAG's full.\n"
+	.string "Whoops, your Bag's full.\n"
 	.string "Get rid of some items, friend!$"
 
 Route124_DivingTreasureHuntersHouse_Text_2711D8: @ 82711D8

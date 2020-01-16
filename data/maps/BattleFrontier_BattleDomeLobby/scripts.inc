@@ -621,8 +621,8 @@ VerdanturfTown_BattleTentLobby_Text_24A554: @ 824A554
 	.string "{STR_VAR_1}.$"
 
 VerdanturfTown_BattleTentLobby_Text_24A56E: @ 824A56E
-	.string "Oh, your BAG appears to be full.\p"
-	.string "Please make room in your BAG, then come\n"
+	.string "Oh, your Bag appears to be full.\p"
+	.string "Please make room in your Bag, then come\n"
 	.string "see me.$"
 
 BattleFrontier_BattleDomeLobby_Text_24A5BF: @ 824A5BF

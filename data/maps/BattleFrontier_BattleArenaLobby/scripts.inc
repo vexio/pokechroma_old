@@ -517,7 +517,7 @@ BattleFrontier_BattleArenaLobby_Text_2569BE: @ 82569BE
 
 BattleFrontier_BattleArenaLobby_Text_2569D8: @ 82569D8
 	.string "Oh?\n"
-	.string "Your BAG seems to be full.\p"
+	.string "Your Bag seems to be full.\p"
 	.string "I urge you to clear space and\n"
 	.string "return for your prize.$"
 

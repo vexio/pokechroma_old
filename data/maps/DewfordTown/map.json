@@ -73,15 +73,15 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "EVENT_OBJ_GFX_FISHERMAN",
-            "movement_range_x": 1,
+            "graphics_id": "EVENT_OBJ_GFX_HIKER",
+            "movement_range_x": 2,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
             "script": "DewfordTown_EventScript_1E95D5",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 41,
-            "y": 11
+            "x": 43,
+            "y": 14
         },
         {
             "elevation": 3,
@@ -93,16 +93,16 @@
             "script": "DewfordTown_EventScript_1E9922",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 26,
+            "x": 32,
             "y": 20
         },
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "EVENT_OBJ_GFX_ANABEL",
+            "graphics_id": "EVENT_OBJ_GFX_MAN_3",
             "movement_range_x": 0,
             "movement_range_y": 0,
-            "movement_type": "MOVEMENT_TYPE_NONE",
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
             "script": "NULL",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
@@ -120,6 +120,19 @@
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
             "x": 34,
+            "y": 8
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_MAN_2",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 45,
             "y": 8
         }
     ],
@@ -142,14 +155,14 @@
             "y": 10
         },
         {
-            "dest_map": "MAP_DEWFORD_TOWN_GYM",
+            "dest_map": "MAP_DEWFORD_TOWN_HOUSE1",
             "dest_warp_id": 0,
             "elevation": 0,
             "x": 14,
             "y": 17
         },
         {
-            "dest_map": "MAP_DEWFORD_TOWN_HOUSE1",
+            "dest_map": "MAP_DEWFORD_TOWN_GYM",
             "dest_warp_id": 0,
             "elevation": 0,
             "x": 23,

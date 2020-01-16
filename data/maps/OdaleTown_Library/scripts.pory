@@ -1,0 +1,161 @@
+raw `
+OdaleTown_Library_MapScripts::
+	.byte 0
+`
+
+script AlnerwickLibrary_Girl {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}There are so many old books in this library!\pLook! I just found a book from 127 years ago!"), MSGBOX_AUTOCLOSE)
+    applymovement(3, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    end
+}
+script AlnerwickLibrary_FatMan {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}I'm trying to find {COLOR GREEN}Prof. Cypress'{COLOR BLUE} recently published book about fossilization."), MSGBOX_AUTOCLOSE)
+    applymovement(5, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    end
+}
+script AlnerwickLibrary_Artist {
+    lock
+    faceplayer
+    if (!var(VAR_ALNERWICKLIBRARY_EVENT)) {
+        msgbox(format("{COLOR RED}I wonder what that thug wants from this old library..."), MSGBOX_NPC)
+        end
+    } else {
+        msgbox(format("{COLOR RED}That thug wanted an {COLOR GREEN}Ancient Tome{COLOR RED}?\pHow interesting, since that thug probably doesn't even know how to read it!"), MSGBOX_AUTOCLOSE)
+        applymovement(4, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        end
+    }
+}
+script AlnerwickLibrary_Boy {
+    msgbox(format("{COLOR BLUE}My mom forces me to play outside, but instead I come in here!\pI dunno, I think I'm more of an indoor person."), MSGBOX_NPC)
+    end
+}
+script AlnerwickLibrary_Librarian {
+    msgbox(format("Librarian: {COLOR RED}The book that Grunt stole is written in an ancient language.\pIt has yet to be translated, I don't think he can do much with that."), MSGBOX_AUTOCLOSE)
+    applymovement(2, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    end
+}
+
+// Team Proto Event
+const Grunt = 1
+const OldLady = 2
+
+script AlnerwickLibrary_TeamProto_Event {
+    if (!var(VAR_ALNERWICKLIBRARY_EVENT)) {
+        lockall
+        applymovement(Grunt, Common_Movement_WalkInPlaceLeft)
+        waitmovement(0)
+        delay(10)
+        msgbox(format("Grunt: {COLOR BLUE}I'm not gonna ask again old hag!\pHand over that book!"))
+        closemessage
+        applymovement(OldLady, Common_Movement_WalkInPlaceRight)
+        waitmovement(0)
+        delay(10)
+        msgbox(format("Librarian: {COLOR RED}I'm sorry sir, but this book cannot be purchased nor checked out. This shelf here is for historical purposes only."))
+        closemessage
+        applymovement(Grunt, Common_Movement_WalkInPlaceLeft)
+        waitmovement(0)
+        delay(10)
+        msgbox(format("Grunt: {COLOR BLUE}Does it look like I care about history, old lady?\p{COLOR GREEN}Team Proto{COLOR BLUE} is going to write it's own history!\p{COLOR DARK_GREY}Grunt: {COLOR BLUE}Now, I'll be taking this!"))
+        closemessage
+        applymovement(Grunt, Common_Movement_WalkInPlaceLeft)
+        waitmovement(0)
+        delay(5)
+        applymovement(OldLady, Common_Movement_ExclamationMark)
+        playse(SE_PIN)
+        waitmovement(0)
+        delay(10)
+        msgbox(format("The Grunt took the Ancient Tome from the Librarian."))
+        closemessage
+        msgbox(format("Grunt: {COLOR BLUE}Hopefully our Boss will be fond of this find!"))
+        closemessage
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_1) == 5) {
+            applymovement(Grunt, AlnerwickLibrary_TeamProto_Movement_0)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 6) {
+            applymovement(Grunt, AlnerwickLibrary_TeamProto_Movement_1)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 7) {
+            applymovement(Grunt, AlnerwickLibrary_TeamProto_Movement_2)
+            waitmovement(0)
+        }
+        msgbox(format("Grunt: {COLOR BLUE}What are you doin' kid?\nEavesdroppin'?\p{COLOR DARK_GREY}Grunt: {COLOR BLUE}This is grown-up talk, now scram!"))
+        closemessage
+        trainerbattle_no_intro(TRAINER_PROTOGRUNT_1, format("Huh...\nY'Sure are strong for a kid."))
+        applymovement(Grunt, Common_Movement_WalkInPlaceRight)
+        waitmovement(0)
+        delay(10)
+        msgbox(format("Grunt: {COLOR BLUE}Did you think this little battle was gonna encourage me to return this book?\p{COLOR DARK_GREY}Grunt: {COLOR BLUE}Ha! Nope!\nAbra, use Teleport!"))
+        closemessage
+        fadescreen(3)
+        removeobject(Grunt)
+        playse(SE_W100)
+        delay(5)
+        playse(SE_TK_WARPOUT)
+        fadescreen(2)
+        delay(10)
+        applymovement(OldLady, AlnerwickLibrary_TeamProto_Movement_3)
+        waitmovement(0)
+        if (var(VAR_TEMP_1) == 5) {
+            applymovement(OldLady, AlnerwickLibrary_TeamProto_Movement_0)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 6) {
+            applymovement(OldLady, AlnerwickLibrary_TeamProto_Movement_1)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 7) {
+            applymovement(OldLady, AlnerwickLibrary_TeamProto_Movement_2)
+            waitmovement(0)
+        }
+        msgbox(format("Librarian: {COLOR RED}Valiant effort young one.\nI can tell you are talented.\p{COLOR DARK_GREY}Librarian: {COLOR RED}I appreciate your effort in helping me keep that piece of history, but realistically that book is a bunch of jibber-jabber.\pNothing in there is worth his time, as it's written in an ancient language, which no one understands.\p{COLOR DARK_GREY}Librarian: {COLOR RED}Now. I must get back to organizing these books."))
+        closemessage
+        if (var(VAR_TEMP_1) == 5) {
+            applymovement(OldLady, AlnerwickLibrary_TeamProto_Movement_4)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 6) {
+            applymovement(OldLady, AlnerwickLibrary_TeamProto_Movement_5)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 7) {
+            applymovement(OldLady, AlnerwickLibrary_TeamProto_Movement_6)
+            waitmovement(0)
+        }
+        setvar(VAR_ALNERWICKLIBRARY_EVENT, 1)
+        setflag(FLAG_ALNERWICKLIBRARY_EVENT)
+        releaseall
+        end        
+    }
+}
+movement AlnerwickLibrary_TeamProto_Movement_0 {
+    walk_down
+    walk_right
+}
+movement AlnerwickLibrary_TeamProto_Movement_1 {
+    walk_down * 2
+    walk_right
+}
+movement AlnerwickLibrary_TeamProto_Movement_2 {
+    walk_down * 3
+    walk_right
+}
+movement AlnerwickLibrary_TeamProto_Movement_3 {
+    walk_right
+}
+movement AlnerwickLibrary_TeamProto_Movement_4 {
+    walk_left * 2
+    walk_up * 2
+}
+movement AlnerwickLibrary_TeamProto_Movement_5 {
+    walk_left * 2
+    walk_up * 3
+}
+movement AlnerwickLibrary_TeamProto_Movement_6 {
+    walk_left * 2
+    walk_up * 4
+}

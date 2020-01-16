@@ -216,7 +216,7 @@ sText_AuroraTicketGot:
 	.string "Thank you for using the MYSTERY\nGIFT System.$"
 
 sText_AuroraTicketNoPlace:
-	.string "Oh, I'm sorry, {PLAYER}.\nYour BAG's KEY ITEMS POCKET is full.\pPlease store something on your PC,\nthen come back for this.$"
+	.string "Oh, I'm sorry, {PLAYER}.\nYour Bag's KEY ITEMS POCKET is full.\pPlease store something on your PC,\nthen come back for this.$"
 
 MysteryEventScript_MysticTicket:: @ 867550B
 	setvaddress MysteryEventScript_MysticTicket
@@ -270,7 +270,7 @@ sText_MysticTicketGot:
 	.string "Thank you for using the MYSTERY\nGIFT System.$"
 
 sText_MysticTicketNoPlace:
-	.string "Oh, I'm sorry, {PLAYER}.\nYour BAG's KEY ITEMS POCKET is full.\pPlease store something on your PC,\nthen come back for this.$"
+	.string "Oh, I'm sorry, {PLAYER}.\nYour Bag's KEY ITEMS POCKET is full.\pPlease store something on your PC,\nthen come back for this.$"
 
 MysteryEventScript_AlteringCave:: @ 86756E3
 	setvaddress MysteryEventScript_AlteringCave
@@ -340,4 +340,4 @@ sText_MysteryGiftOldSeaMap_2:
 	.string "Thank you for using the MYSTERY\nGIFT System.$"
 
 sText_MysteryGiftOldSeaMap_3:
-	.string "Oh, I'm sorry, {PLAYER}.\nYour BAG's KEY ITEMS POCKET is full.\pPlease store something on your PC,\nthen come back for this.$"
+	.string "Oh, I'm sorry, {PLAYER}.\nYour Bag's KEY ITEMS POCKET is full.\pPlease store something on your PC,\nthen come back for this.$"

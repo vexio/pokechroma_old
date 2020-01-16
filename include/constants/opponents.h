@@ -2,18 +2,18 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #define TRAINER_NONE              0
-#define TRAINER_SAWYER_1          1
-#define TRAINER_GRUNT_1           2
-#define TRAINER_GRUNT_2           3
-#define TRAINER_GRUNT_3           4
-#define TRAINER_GRUNT_4           5
-#define TRAINER_GRUNT_5           6
-#define TRAINER_GRUNT_6           7
-#define TRAINER_GRUNT_7           8
-#define TRAINER_GABRIELLE_1       9
-#define TRAINER_GRUNT_8          10
-#define TRAINER_MARCEL           11
-#define TRAINER_ALBERTO          12
+#define TRAINER_CANVASCREEK_YOUNGSTER          1
+#define TRAINER_CANVASCREEK_RICHBOY           2
+#define TRAINER_ALNERWICKCITY_RIVAL_0           3
+#define TRAINER_ALNERWICKCITY_RIVAL_1           4
+#define TRAINER_ALNERWICKCITY_RIVAL_2           5
+#define TRAINER_PROTOGRUNT_1           6
+#define TRAINER_ALNERWICKPASS_LASS           7
+#define TRAINER_ALNERWICKPASS_FISHERMAN           8
+#define TRAINER_ALNERWICKPASS_GENTLEMAN       9
+#define TRAINER_ALNERWICKPASS_RICHBOY          10
+#define TRAINER_ALNERWICKPASS_HIKER           11
+#define TRAINER_ALNERWICKPASS_LITTLEBOY          12
 #define TRAINER_ED               13
 #define TRAINER_GRUNT_9          14
 #define TRAINER_DECLAN           15

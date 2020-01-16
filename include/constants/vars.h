@@ -47,7 +47,7 @@
 #define VAR_RECYCLE_GOODS                    0x4020
 #define VAR_REPEL_STEP_COUNT                 0x4021
 #define VAR_ICE_STEP_COUNT                   0x4022
-#define VAR_STARTER_MON                      0x4023 // 0=Treecko, 1=Torchic, 2=Mudkip
+#define VAR_STARTER_MON                      0x4023 // 0=Chikorita, 1=Cyndaquil, 2=Totodile
 #define VAR_MIRAGE_RND_H                     0x4024
 #define VAR_MIRAGE_RND_L                     0x4025
 #define VAR_SECRET_BASE_MAP                  0x4026
@@ -103,9 +103,9 @@
 #define VAR_HAS_STARTER                      0x4056 // Unused Var // Player has a starter Pokémon 0 = no; 1 = yes
 #define VAR_PETALBURG_STATE                  0x4057
 #define VAR_SLATEPORT_STATE                  0x4058
-#define VAR_ALNERWICKCITY_ROBBERY            0x4059 // Unused Var // AlnerwickCity Robbery Event
+#define VAR_ALNERWICKCITY_RIVALBATTLE        0x4059 // Unused Var // AlnerwickCity Rival Battle
 #define VAR_RUSTBORO_STATE                   0x405A
-#define VAR_UNUSED_0x405B                    0x405B // Unused Var
+#define VAR_ALNERWICKLIBRARY_EVENT           0x405B // Unused Var // Alnerwick Library
 #define VAR_UNUSED_0x405C                    0x405C // Unused Var
 #define VAR_MOSSDEEP_STATE                   0x405D
 #define VAR_RAYQUAZA_STATE                   0x405E

@@ -550,7 +550,7 @@ VerdanturfTown_BattleTentLobby_Text_24E57B: @ 824E57B
 	.string "You seem to have no space for\n"
 	.string "our prize.\p"
 	.string "You should return when you have\n"
-	.string "organized your BAG.$"
+	.string "organized your Bag.$"
 
 BattleFrontier_BattlePalaceLobby_Text_24E5D8: @ 824E5D8
 VerdanturfTown_BattleTentLobby_Text_24E5D8: @ 824E5D8

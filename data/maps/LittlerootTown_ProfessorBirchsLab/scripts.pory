@@ -811,7 +811,7 @@ LittlerootTown_ProfessorBirchsLab_Text_1FAE40: @ 81FAE40
 	.string "them with POKé BALLS!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FAEF3: @ 81FAEF3
-	.string "Oh? Your BAG's full.$"
+	.string "Oh? Your Bag's full.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FAF08: @ 81FAF08
 	.string "MAY: I wonder where I should go look\n"
@@ -832,7 +832,7 @@ LittlerootTown_ProfessorBirchsLab_Text_1FAF8E: @ 81FAF8E
 	.string "I'll try to get them with POKé BALLS.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FB05D: @ 81FB05D
-	.string "Hey, your BAG's full.$"
+	.string "Hey, your Bag's full.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FB073: @ 81FB073
 	.string "BRENDAN: Where should I look for\n"
@@ -1091,25 +1091,27 @@ script CypressLab_GetStarter_Event {
         applymovement(1, _CypressLab_GetStarter_Movement_2)
         waitmovement(0)
         playfanfare(MUS_FANFA4)
-        msgbox(format("{PLAYER} received 10 Poké Balls"))
+        msgbox(format("{PLAYER} received {COLOR GREEN}10 Poké Balls"))
         giveitem(ITEM_POKE_BALL, 10)
         waitfanfare
         closemessage
         playfanfare(MUS_FANFA4)
-        msgbox(format("{PLAYER} received 5 Potions"))
+        msgbox(format("{PLAYER} received {COLOR GREEN}5 Potions"))
         giveitem(ITEM_POTION, 5)
         waitfanfare
         closemessage
         playfanfare(MUS_FANFA4)
-        msgbox(format("{PLAYER} received the Running Shoes\p(Hold B to Run)"))
+        msgbox(format("{PLAYER} received the {COLOR GREEN}Running Shoes"))
         waitfanfare
         closemessage
         playfanfare(MUS_FANFA4)
-        msgbox(format("{PLAYER} received the Pokédex"))
+        msgbox(format("{PLAYER} received the {COLOR GREEN}Pokédex"))
         waitfanfare
         closemessage
         setflag(FLAG_RECEIVED_RUNNING_SHOES)
+		setflag(FLAG_SYS_B_DASH)
         setflag(FLAG_SYS_POKEDEX_GET)
+		setflag(FLAG_SYS_POKEMON_GET)
 	    special(sub_81AFDA0)
         delay(10)
         msgbox(format("Prof. Cypress:{COLOR RED} Now, {PLAYER}.\pBegin your journey!\p{COLOR DARK_GREY}Prof. Cypress:{COLOR RED} Start the Ryoko League Challenge!\p{COLOR DARK_GREY}Prof. Cypress:{COLOR RED} Now, I must get back to work!\nI'm mighty busy."))

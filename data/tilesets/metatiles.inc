@@ -586,3 +586,10 @@ gMetatiles_Pineridge::
 	.align 1
 gMetatileAttributes_Pineridge::
 	.incbin "data/tilesets/secondary/pineridge/metatile_attributes.bin"
+	.align 1
+gMetatiles_Library::
+	.incbin "data/tilesets/secondary/library/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Library::
+	.incbin "data/tilesets/secondary/library/metatile_attributes.bin"

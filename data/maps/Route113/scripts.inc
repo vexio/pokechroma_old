@@ -160,7 +160,7 @@ Route113_Text_1F2456: @ 81F2456
 Route113_Text_1F2471: @ 81F2471
 	.string "TRAINER TIPS\p"
 	.string "You may register one of the KEY ITEMS\n"
-	.string "in your BAG as SELECT.\p"
+	.string "in your Bag as SELECT.\p"
 	.string "Simply press SELECT to use\n"
 	.string "the registered item conveniently.$"
 

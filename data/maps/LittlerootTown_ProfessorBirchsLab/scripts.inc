@@ -810,7 +810,7 @@ LittlerootTown_ProfessorBirchsLab_Text_1FAE40: @ 81FAE40
 	.string "them with POKé BALLS!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FAEF3: @ 81FAEF3
-	.string "Oh? Your BAG's full.$"
+	.string "Oh? Your Bag's full.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FAF08: @ 81FAF08
 	.string "MAY: I wonder where I should go look\n"
@@ -831,7 +831,7 @@ LittlerootTown_ProfessorBirchsLab_Text_1FAF8E: @ 81FAF8E
 	.string "I'll try to get them with POKé BALLS.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FB05D: @ 81FB05D
-	.string "Hey, your BAG's full.$"
+	.string "Hey, your Bag's full.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_1FB073: @ 81FB073
 	.string "BRENDAN: Where should I look for\n"
@@ -1105,7 +1105,9 @@ CypressLab_GetStarter_Event_3:
 	waitfanfare
 	closemessage
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_SYS_POKEMON_GET
 	special sub_81AFDA0
 	delay 10
 	msgbox CypressLab_GetStarter_Event_Text_10
@@ -1232,17 +1234,16 @@ CypressLab_GetStarter_Event_Text_5:
 	.string "some starting items.$"
 
 CypressLab_GetStarter_Event_Text_6:
-	.string "{PLAYER} received 10 Poké Balls$"
+	.string "{PLAYER} received {COLOR GREEN}10 Poké Balls$"
 
 CypressLab_GetStarter_Event_Text_7:
-	.string "{PLAYER} received 5 Potions$"
+	.string "{PLAYER} received {COLOR GREEN}5 Potions$"
 
 CypressLab_GetStarter_Event_Text_8:
-	.string "{PLAYER} received the Running Shoes\p"
-	.string "(Hold B to Run)$"
+	.string "{PLAYER} received the {COLOR GREEN}Running Shoes$"
 
 CypressLab_GetStarter_Event_Text_9:
-	.string "{PLAYER} received the Pokédex$"
+	.string "{PLAYER} received the {COLOR GREEN}Pokédex$"
 
 CypressLab_GetStarter_Event_Text_10:
 	.string "Prof. Cypress:{COLOR RED} Now, {PLAYER}.\p"

@@ -426,7 +426,7 @@ Route116_Text_1F3521: @ 81F3521
 	.string "Thank you and bye-bye!$"
 
 Route116_Text_1F3593: @ 81F3593
-	.string "Your BAG is jam-packed.\n"
+	.string "Your Bag is jam-packed.\n"
 	.string "I can't give you this REPEAT BALL.$"
 
 Route116_Text_1F35CE: @ 81F35CE
@@ -483,9 +483,9 @@ Route116_Text_1F3825: @ 81F3825
 
 Route116_Text_1F38D4: @ 81F38D4
 	.string "TRAINER TIPS\p"
-	.string "Your BAG has several POCKETS.\p"
+	.string "Your Bag has several POCKETS.\p"
 	.string "Items you obtain are automatically\n"
 	.string "placed in the appropriate POCKETS.\p"
 	.string "No TRAINER can afford to be without\n"
-	.string "a BAG of their own.$"
+	.string "a Bag of their own.$"
 

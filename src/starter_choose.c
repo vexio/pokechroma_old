@@ -551,7 +551,7 @@ static void Task_StarterChoose5(u8 taskId)
 
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
-    case 0:  // YES
+    case 0:  // Yes
         // Return the starter choice and exit.
         gSpecialVar_Result = gTasks[taskId].tStarterSelection;
         ResetAllPicSprites();
